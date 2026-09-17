@@ -1,0 +1,2597 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cardo</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJhZGdlR3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjOUI1REU1IiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyRkE4NUEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJzaGVlbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRkZGRkZGIiBzdG9wLW9wYWNpdHk9IjAuMTgiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iNjAlIiBzdG9wLWNvbG9yPSIjRkZGRkZGIiBzdG9wLW9wYWNpdHk9IjAiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KCiAgPCEtLSBiYWRnZSBib2R5IC0tPgogIDxyZWN0IHg9IjgiIHk9IjgiIHdpZHRoPSIxODQiIGhlaWdodD0iMTg0IiByeD0iNDIiIGZpbGw9InVybCgjYmFkZ2VHcmFkKSIgc3Ryb2tlPSIjRjFFREY3IiBzdHJva2Utd2lkdGg9IjYiIC8+CiAgPHJlY3QgeD0iOCIgeT0iOCIgd2lkdGg9IjE4NCIgaGVpZ2h0PSIxODQiIHJ4PSI0MiIgZmlsbD0idXJsKCNzaGVlbikiIC8+CgogIDwhLS0gY29ybmVyIGNhcmQgbWFya3MsIHRvcC1sZWZ0IGFuZCBib3R0b20tcmlnaHQgLS0+CiAgPHRleHQgeD0iMjgiIHk9IjQ2IiBmb250LWZhbWlseT0iR2VvcmdpYSwgc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNGMUVERjciIG9wYWNpdHk9IjAuODUiPkHimaA8L3RleHQ+CiAgPHRleHQgeD0iMTcyIiB5PSIxNjgiIGZvbnQtZmFtaWx5PSJHZW9yZ2lhLCBzZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iI0YxRURGNyIgb3BhY2l0eT0iMC44NSIgdHJhbnNmb3JtPSJyb3RhdGUoMTgwIDE3MiAxNjgpIj5B4pmgPC90ZXh0PgoKICA8IS0tIG1hc2NvdCBmYWNlIC0tPgogIDxnPgogICAgPCEtLSBhcm1zIC0tPgogICAgPHJlY3QgeD0iMTgiIHk9Ijk2IiB3aWR0aD0iMzQiIGhlaWdodD0iMTQiIHJ4PSI3IiBmaWxsPSIjRjFFREY3IiAvPgogICAgPGNpcmNsZSBjeD0iMjAiIGN5PSIxMDMiIHI9IjEyIiBmaWxsPSIjRjFFREY3IiAvPgogICAgPHJlY3QgeD0iMTQ4IiB5PSIxMTIiIHdpZHRoPSIzNCIgaGVpZ2h0PSIxNCIgcng9IjciIGZpbGw9IiNGMUVERjciIC8+CiAgICA8Y2lyY2xlIGN4PSIxODAiIGN5PSIxMTkiIHI9IjEyIiBmaWxsPSIjRjFFREY3IiAvPgoKICAgIDwhLS0gZXllcyAtLT4KICAgIDxjaXJjbGUgY3g9Ijc2IiBjeT0iOTgiIHI9IjE0IiBmaWxsPSIjRjFFREY3IiAvPgogICAgPGNpcmNsZSBjeD0iMTI0IiBjeT0iOTgiIHI9IjE0IiBmaWxsPSIjRjFFREY3IiAvPgogICAgPGNpcmNsZSBjeD0iNzkiIGN5PSIxMDAiIHI9IjYuNSIgZmlsbD0iIzE3MEIyNiIgLz4KICAgIDxjaXJjbGUgY3g9IjEyNyIgY3k9IjEwMCIgcj0iNi41IiBmaWxsPSIjMTcwQjI2IiAvPgoKICAgIDwhLS0gc21pbGUgLS0+CiAgICA8cGF0aCBkPSJNNzAgMTI4IFExMDAgMTU0IDEzMCAxMjgiIHN0cm9rZT0iI0YxRURGNyIgc3Ryb2tlLXdpZHRoPSI3IiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiIC8+CgogICAgPCEtLSBjaGVla3MgLS0+CiAgICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjExNiIgcj0iOCIgZmlsbD0iI0YxRURGNyIgb3BhY2l0eT0iMC4zNSIgLz4KICAgIDxjaXJjbGUgY3g9IjE0MCIgY3k9IjExNiIgcj0iOCIgZmlsbD0iI0YxRURGNyIgb3BhY2l0eT0iMC4zNSIgLz4KICA8L2c+CgogIDwhLS0gc3RhciBiYWRnZSAtLT4KICA8dGV4dCB4PSIxMDAiIHk9IjQwIiBmb250LXNpemU9IjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRjFFREY3Ij7imIU8L3RleHQ+Cjwvc3ZnPgo=" />
+<meta name="theme-color" content="#2E1650" />
+<meta property="og:title" content="Cardo" />
+<meta property="og:description" content="Free multiplayer Uno, Chess, Poker, and Pool with friends." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>html, body, #root { height: 100%; margin: 0; }</style>
+
+<!--
+  ============================================================
+  Cardo — single-file build. No npm, no build step needed.
+  Just host this one file (e.g. GitHub Pages) and it runs.
+
+  SETUP REQUIRED: paste your own Firebase project config into
+  the firebaseConfig object below (search for "AIzaSyBW6woARuwom5peFWDyBtMEpswMyGR2U-M").
+  See the comment above it for exact steps.
+  ============================================================
+-->
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "firebase/app": "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"
+  }
+}
+</script>
+</head>
+<body>
+<div id="root"></div>
+<script type="module">
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import ReactDOM from "react-dom/client";
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc, setDoc, onSnapshot } from "firebase/firestore";
+import { getAuth, signInAnonymously, onAuthStateChanged } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBW6woARuwom5peFWDyBtMEpswMyGR2U-M",
+  authDomain: "cardo-2e260.firebaseapp.com",
+  projectId: "cardo-2e260",
+  storageBucket: "cardo-2e260.firebasestorage.app",
+  messagingSenderId: "304554003428",
+  appId: "1:304554003428:web:30091ee9ba73b6cb1415f1"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+let resolveUid;
+const uidReady = new Promise((resolve) => {
+  resolveUid = resolve;
+});
+onAuthStateChanged(auth, (user) => {
+  if (user) resolveUid(user.uid);
+});
+signInAnonymously(auth).catch((e) => console.error("Anonymous sign-in failed:", e));
+async function loadRoom(code) {
+  try {
+    const snap = await getDoc(doc(db, "rooms", code));
+    return snap.exists() ? JSON.parse(snap.data().value) : null;
+  } catch {
+    return null;
+  }
+}
+async function saveRoom(code, data) {
+  try {
+    await setDoc(doc(db, "rooms", code), { value: JSON.stringify(data), updatedAt: Date.now() });
+  } catch {
+  }
+}
+function subscribeRoom(code, callback) {
+  return onSnapshot(
+    doc(db, "rooms", code),
+    (snap) => callback(snap.exists() ? JSON.parse(snap.data().value) : null),
+    (err) => console.error("Room subscription error:", err)
+  );
+}
+async function loadProfile() {
+  try {
+    const uid = await uidReady;
+    const snap = await getDoc(doc(db, "profiles", uid));
+    return snap.exists() ? JSON.parse(snap.data().value) : null;
+  } catch {
+    return null;
+  }
+}
+async function saveProfile(p) {
+  try {
+    const uid = await uidReady;
+    await setDoc(doc(db, "profiles", uid), { value: JSON.stringify(p), updatedAt: Date.now() });
+  } catch {
+  }
+}
+
+const LANGS = {
+  en: { label: "English", native: "English", flag: "\u{1F1EC}\u{1F1E7}", dir: "ltr" },
+  ar: { label: "Arabic", native: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629", flag: "\u{1F1F8}\u{1F1E6}", dir: "rtl" },
+  es: { label: "Spanish", native: "Espa\xF1ol", flag: "\u{1F1EA}\u{1F1F8}", dir: "ltr" },
+  de: { label: "German", native: "Deutsch", flag: "\u{1F1E9}\u{1F1EA}", dir: "ltr" },
+  it: { label: "Italian", native: "Italiano", flag: "\u{1F1EE}\u{1F1F9}", dir: "ltr" }
+};
+const STR = {
+  appName: { en: "Cardo", ar: "\u0643\u0627\u0631\u062F\u0648", es: "Cardo", de: "Cardo", it: "Cardo" },
+  installApp: { en: "Install Cardo", ar: "\u062A\u062B\u0628\u064A\u062A \u0643\u0627\u0631\u062F\u0648", es: "Instalar Cardo", de: "Cardo installieren", it: "Installa Cardo" },
+  installIOSHint: { en: 'Tap Share, then "Add to Home Screen" to install', ar: '\u0627\u0636\u063A\u0637 \u0645\u0634\u0627\u0631\u0643\u0629 \u062B\u0645 "\u0625\u0636\u0627\u0641\u0629 \u0625\u0644\u0649 \u0627\u0644\u0634\u0627\u0634\u0629 \u0627\u0644\u0631\u0626\u064A\u0633\u064A\u0629" \u0644\u0644\u062A\u062B\u0628\u064A\u062A', es: 'Toca Compartir y luego "A\xF1adir a inicio" para instalar', de: 'Tippe auf Teilen, dann "Zum Home-Bildschirm" zum Installieren', it: 'Tocca Condividi, poi "Aggiungi a Home" per installare' },
+  tagline: {
+    en: "Free multiplayer card games. Pick a name, pick a table.",
+    ar: "\u0623\u0644\u0639\u0627\u0628 \u0648\u0631\u0642 \u062C\u0645\u0627\u0639\u064A\u0629 \u0645\u062C\u0627\u0646\u064A\u0629. \u0627\u062E\u062A\u0631 \u0627\u0633\u0645\u0643 \u0648\u0627\u062E\u062A\u0631 \u0637\u0627\u0648\u0644\u062A\u0643.",
+    es: "Juegos de cartas multijugador gratis. Elige un nombre, elige una mesa.",
+    de: "Kostenlose Multiplayer-Kartenspiele. Namen w\xE4hlen, Tisch w\xE4hlen.",
+    it: "Giochi di carte multiplayer gratuiti. Scegli un nome, scegli un tavolo."
+  },
+  yourName: { en: "Your name", ar: "\u0627\u0633\u0645\u0643", es: "Tu nombre", de: "Dein Name", it: "Il tuo nome" },
+  namePlaceholder: { en: "e.g. Joe", ar: "\u0645\u062B\u0627\u0644: \u064A\u0648\u0633\u0641", es: "p. ej. Joe", de: "z. B. Max", it: "es. Marco" },
+  continue: { en: "Continue", ar: "\u0645\u062A\u0627\u0628\u0639\u0629", es: "Continuar", de: "Weiter", it: "Continua" },
+  createTable: { en: "Create a table", ar: "\u0623\u0646\u0634\u0626 \u0637\u0627\u0648\u0644\u0629", es: "Crear mesa", de: "Tisch erstellen", it: "Crea tavolo" },
+  joinTable: { en: "Join a table", ar: "\u0627\u0646\u0636\u0645 \u0625\u0644\u0649 \u0637\u0627\u0648\u0644\u0629", es: "Unirse a mesa", de: "Tisch beitreten", it: "Unisciti a un tavolo" },
+  tableCode: { en: "Table code", ar: "\u0631\u0645\u0632 \u0627\u0644\u0637\u0627\u0648\u0644\u0629", es: "C\xF3digo de mesa", de: "Tisch-Code", it: "Codice tavolo" },
+  enterCode: { en: "Enter code", ar: "\u0623\u062F\u062E\u0644 \u0627\u0644\u0631\u0645\u0632", es: "Introduce el c\xF3digo", de: "Code eingeben", it: "Inserisci codice" },
+  join: { en: "Join", ar: "\u0627\u0646\u0636\u0645\u0627\u0645", es: "Unirse", de: "Beitreten", it: "Unisciti" },
+  players: { en: "Players", ar: "\u0627\u0644\u0644\u0627\u0639\u0628\u0648\u0646", es: "Jugadores", de: "Spieler", it: "Giocatori" },
+  playerCount: { en: "Table size", ar: "\u0639\u062F\u062F \u0627\u0644\u0644\u0627\u0639\u0628\u064A\u0646", es: "Tama\xF1o de mesa", de: "Tischgr\xF6\xDFe", it: "Numero giocatori" },
+  chooseGame: { en: "Choose a game", ar: "\u0627\u062E\u062A\u0631 \u0644\u0639\u0628\u0629", es: "Elige un juego", de: "Spiel w\xE4hlen", it: "Scegli un gioco" },
+  uno: { en: "Uno", ar: "\u0623\u0648\u0646\u0648", es: "Uno", de: "Uno", it: "Uno" },
+  comingSoon: { en: "Coming soon", ar: "\u0642\u0631\u064A\u0628\u064B\u0627", es: "Pr\xF3ximamente", de: "Demn\xE4chst", it: "Prossimamente" },
+  host: { en: "Host", ar: "\u0627\u0644\u0645\u0636\u064A\u0641", es: "Anfitri\xF3n", de: "Gastgeber", it: "Host" },
+  waiting: { en: "Waiting for players\u2026", ar: "\u0628\u0627\u0646\u062A\u0638\u0627\u0631 \u0627\u0644\u0644\u0627\u0639\u0628\u064A\u0646\u2026", es: "Esperando jugadores\u2026", de: "Warte auf Spieler\u2026", it: "In attesa di giocatori\u2026" },
+  startGame: { en: "Start game", ar: "\u0627\u0628\u062F\u0623 \u0627\u0644\u0644\u0639\u0628\u0629", es: "Iniciar juego", de: "Spiel starten", it: "Inizia partita" },
+  needMore: { en: "Need at least 2 players to start", ar: "\u064A\u0644\u0632\u0645 \u0644\u0627\u0639\u0628\u0627\u0646 \u0639\u0644\u0649 \u0627\u0644\u0623\u0642\u0644 \u0644\u0644\u0628\u062F\u0621", es: "Se necesitan al menos 2 jugadores", de: "Mindestens 2 Spieler n\xF6tig", it: "Servono almeno 2 giocatori" },
+  copyCode: { en: "Copy code", ar: "\u0646\u0633\u062E \u0627\u0644\u0631\u0645\u0632", es: "Copiar c\xF3digo", de: "Code kopieren", it: "Copia codice" },
+  copied: { en: "Copied", ar: "\u062A\u0645 \u0627\u0644\u0646\u0633\u062E", es: "Copiado", de: "Kopiert", it: "Copiato" },
+  leaveTable: { en: "Leave table", ar: "\u0645\u063A\u0627\u062F\u0631\u0629 \u0627\u0644\u0637\u0627\u0648\u0644\u0629", es: "Salir de la mesa", de: "Tisch verlassen", it: "Lascia il tavolo" },
+  yourTurn: { en: "Your turn", ar: "\u062F\u0648\u0631\u0643", es: "Tu turno", de: "Du bist dran", it: "Tocca a te" },
+  turnOf: { en: "turn", ar: "\u062F\u0648\u0631", es: "turno de", de: "am Zug:", it: "turno di" },
+  draw: { en: "Draw", ar: "\u0627\u0633\u062D\u0628", es: "Robar", de: "Ziehen", it: "Pesca" },
+  callUno: { en: "UNO!", ar: "\u0623\u0648\u0646\u0648!", es: "\xA1UNO!", de: "UNO!", it: "UNO!" },
+  chooseColor: { en: "Choose a color", ar: "\u0627\u062E\u062A\u0631 \u0644\u0648\u0646\u064B\u0627", es: "Elige un color", de: "Farbe w\xE4hlen", it: "Scegli un colore" },
+  red: { en: "Red", ar: "\u0623\u062D\u0645\u0631", es: "Rojo", de: "Rot", it: "Rosso" },
+  yellow: { en: "Yellow", ar: "\u0623\u0635\u0641\u0631", es: "Amarillo", de: "Gelb", it: "Giallo" },
+  green: { en: "Green", ar: "\u0623\u062E\u0636\u0631", es: "Verde", de: "Gr\xFCn", it: "Verde" },
+  blue: { en: "Blue", ar: "\u0623\u0632\u0631\u0642", es: "Azul", de: "Blau", it: "Blu" },
+  wins: { en: "wins!", ar: "\u0641\u0627\u0632!", es: "\xA1gana!", de: "gewinnt!", it: "vince!" },
+  playAgain: { en: "Play again", ar: "\u0627\u0644\u0639\u0628 \u0645\u0631\u0629 \u0623\u062E\u0631\u0649", es: "Jugar de nuevo", de: "Nochmal spielen", it: "Gioca ancora" },
+  backToLobby: { en: "Back to lobby", ar: "\u0627\u0644\u0639\u0648\u062F\u0629 \u0625\u0644\u0649 \u0627\u0644\u0631\u062F\u0647\u0629", es: "Volver al lobby", de: "Zur\xFCck zur Lobby", it: "Torna alla lobby" },
+  invalidMove: { en: "That card doesn't match", ar: "\u0647\u0630\u0647 \u0627\u0644\u0648\u0631\u0642\u0629 \u0644\u0627 \u062A\u0637\u0627\u0628\u0642", es: "Esa carta no coincide", de: "Diese Karte passt nicht", it: "Questa carta non corrisponde" },
+  notYourTurn: { en: "Not your turn", ar: "\u0644\u064A\u0633 \u062F\u0648\u0631\u0643", es: "No es tu turno", de: "Nicht dein Zug", it: "Non \xE8 il tuo turno" },
+  cardsLeft: { en: "cards", ar: "\u0623\u0648\u0631\u0627\u0642", es: "cartas", de: "Karten", it: "carte" },
+  deck: { en: "Deck", ar: "\u0627\u0644\u0631\u0632\u0645\u0629", es: "Mazo", de: "Stapel", it: "Mazzo" },
+  roomNotFound: { en: "Table not found", ar: "\u0627\u0644\u0637\u0627\u0648\u0644\u0629 \u063A\u064A\u0631 \u0645\u0648\u062C\u0648\u062F\u0629", es: "Mesa no encontrada", de: "Tisch nicht gefunden", it: "Tavolo non trovato" },
+  roomFull: { en: "Table is full", ar: "\u0627\u0644\u0637\u0627\u0648\u0644\u0629 \u0645\u0645\u062A\u0644\u0626\u0629", es: "Mesa llena", de: "Tisch ist voll", it: "Tavolo pieno" },
+  connecting: { en: "Connecting\u2026", ar: "\u062C\u0627\u0631\u064D \u0627\u0644\u0627\u062A\u0635\u0627\u0644\u2026", es: "Conectando\u2026", de: "Verbinde\u2026", it: "Connessione\u2026" },
+  chooseAvatar: { en: "Choose your avatar", ar: "\u0627\u062E\u062A\u0631 \u0635\u0648\u0631\u062A\u0643 \u0627\u0644\u0631\u0645\u0632\u064A\u0629", es: "Elige tu avatar", de: "W\xE4hle deinen Avatar", it: "Scegli il tuo avatar" },
+  profile: { en: "Profile", ar: "\u0627\u0644\u0645\u0644\u0641 \u0627\u0644\u0634\u062E\u0635\u064A", es: "Perfil", de: "Profil", it: "Profilo" },
+  editProfile: { en: "Edit profile", ar: "\u062A\u0639\u062F\u064A\u0644 \u0627\u0644\u0645\u0644\u0641", es: "Editar perfil", de: "Profil bearbeiten", it: "Modifica profilo" },
+  shop: { en: "Shop", ar: "\u0627\u0644\u0645\u062A\u062C\u0631", es: "Tienda", de: "Shop", it: "Negozio" },
+  coins: { en: "Coins", ar: "\u0639\u0645\u0644\u0627\u062A", es: "Monedas", de: "M\xFCnzen", it: "Monete" },
+  back: { en: "Back", ar: "\u0631\u062C\u0648\u0639", es: "Atr\xE1s", de: "Zur\xFCck", it: "Indietro" },
+  tabPfps: { en: "Avatars", ar: "\u0627\u0644\u0635\u0648\u0631 \u0627\u0644\u0631\u0645\u0632\u064A\u0629", es: "Avatares", de: "Avatare", it: "Avatar" },
+  tabColors: { en: "Name colors", ar: "\u0623\u0644\u0648\u0627\u0646 \u0627\u0644\u0627\u0633\u0645", es: "Colores de nombre", de: "Namensfarben", it: "Colori nome" },
+  tabEffects: { en: "PFP effects", ar: "\u062A\u0623\u062B\u064A\u0631\u0627\u062A \u0627\u0644\u0635\u0648\u0631\u0629", es: "Efectos de avatar", de: "Avatar-Effekte", it: "Effetti avatar" },
+  tabThemes: { en: "Website theme", ar: "\u0645\u0638\u0647\u0631 \u0627\u0644\u0645\u0648\u0642\u0639", es: "Tema del sitio", de: "Website-Design", it: "Tema del sito" },
+  theme_violet: { en: "Violet Night", ar: "\u0644\u064A\u0644 \u0628\u0646\u0641\u0633\u062C\u064A", es: "Noche violeta", de: "Violette Nacht", it: "Notte viola" },
+  theme_ocean: { en: "Ocean Blue", ar: "\u0623\u0632\u0631\u0642 \u0645\u062D\u064A\u0637\u064A", es: "Azul oc\xE9ano", de: "Ozeanblau", it: "Blu oceano" },
+  theme_crimson: { en: "Crimson", ar: "\u0642\u0631\u0645\u0632\u064A", es: "Carmes\xED", de: "Karmesin", it: "Cremisi" },
+  theme_emerald: { en: "Emerald", ar: "\u0632\u0645\u0631\u062F\u064A", es: "Esmeralda", de: "Smaragd", it: "Smeraldo" },
+  theme_sunset: { en: "Sunset", ar: "\u063A\u0631\u0648\u0628", es: "Atardecer", de: "Sonnenuntergang", it: "Tramonto" },
+  theme_midnight: { en: "Midnight", ar: "\u0645\u0646\u062A\u0635\u0641 \u0627\u0644\u0644\u064A\u0644", es: "Medianoche", de: "Mitternacht", it: "Mezzanotte" },
+  buy: { en: "Buy", ar: "\u0634\u0631\u0627\u0621", es: "Comprar", de: "Kaufen", it: "Acquista" },
+  equip: { en: "Equip", ar: "\u0627\u0633\u062A\u062E\u062F\u0627\u0645", es: "Equipar", de: "Ausr\xFCsten", it: "Equipaggia" },
+  equipped: { en: "Equipped", ar: "\u0645\u064F\u0641\u0639\u0651\u0644", es: "Equipado", de: "Ausger\xFCstet", it: "Equipaggiato" },
+  notEnoughCoins: { en: "Not enough coins", ar: "\u0644\u0627 \u062A\u0648\u062C\u062F \u0639\u0645\u0644\u0627\u062A \u0643\u0627\u0641\u064A\u0629", es: "No hay suficientes monedas", de: "Nicht genug M\xFCnzen", it: "Monete insufficienti" },
+  earnMore: { en: "Play games to earn more coins", ar: "\u0627\u0644\u0639\u0628 \u0644\u062A\u0643\u0633\u0628 \u0627\u0644\u0645\u0632\u064A\u062F \u0645\u0646 \u0627\u0644\u0639\u0645\u0644\u0627\u062A", es: "Juega para ganar m\xE1s monedas", de: "Spiele, um mehr M\xFCnzen zu verdienen", it: "Gioca per guadagnare pi\xF9 monete" },
+  tier_rookie: { en: "Rookie", ar: "\u0645\u0628\u062A\u062F\u0626", es: "Novato", de: "Anf\xE4nger", it: "Novizio" },
+  tier_bronze: { en: "Bronze", ar: "\u0628\u0631\u0648\u0646\u0632\u064A", es: "Bronce", de: "Bronze", it: "Bronzo" },
+  tier_silver: { en: "Silver", ar: "\u0641\u0636\u064A", es: "Plata", de: "Silber", it: "Argento" },
+  tier_gold: { en: "Gold", ar: "\u0630\u0647\u0628\u064A", es: "Oro", de: "Gold", it: "Oro" },
+  tier_diamond: { en: "Diamond", ar: "\u0645\u0627\u0633\u064A", es: "Diamante", de: "Diamant", it: "Diamante" },
+  gamesPlayed: { en: "games played", ar: "\u0645\u0628\u0627\u0631\u0627\u0629 \u0645\u0644\u0639\u0648\u0628\u0629", es: "partidas jugadas", de: "gespielte Spiele", it: "partite giocate" },
+  nextTierIn: { en: "more games to next tier", ar: "\u0645\u0628\u0627\u0631\u064A\u0627\u062A \u0623\u062E\u0631\u0649 \u0644\u0644\u0631\u062A\u0628\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629", es: "partidas m\xE1s para el siguiente nivel", de: "weitere Spiele bis zur n\xE4chsten Stufe", it: "altre partite al livello successivo" },
+  maxTier: { en: "Top tier reached", ar: "\u0648\u0635\u0644\u062A \u0644\u0623\u0639\u0644\u0649 \u0631\u062A\u0628\u0629", es: "Nivel m\xE1ximo alcanzado", de: "H\xF6chste Stufe erreicht", it: "Livello massimo raggiunto" },
+  chess: { en: "Chess", ar: "\u0634\u0637\u0631\u0646\u062C", es: "Ajedrez", de: "Schach", it: "Scacchi" },
+  poker: { en: "Poker", ar: "\u0628\u0648\u0643\u0631", es: "P\xF3ker", de: "Poker", it: "Poker" },
+  pool: { en: "8-Ball Pool", ar: "\u0628\u0644\u064A\u0627\u0631\u062F\u0648", es: "Billar (8 bolas)", de: "Poolbillard", it: "Biliardo (8 palle)" },
+  check: { en: "Check", ar: "\u0643\u0634", es: "Jaque", de: "Schach", it: "Scacco" },
+  checkmate: { en: "Checkmate", ar: "\u0643\u0634 \u0645\u0644\u0643", es: "Jaque mate", de: "Schachmatt", it: "Scacco matto" },
+  stalemate: { en: "Stalemate \u2014 draw", ar: "\u062A\u0639\u0627\u062F\u0644 \u0628\u0627\u0644\u062C\u0645\u0648\u062F", es: "Ahogado \u2014 empate", de: "Patt \u2014 Unentschieden", it: "Stallo \u2014 pareggio" },
+  gameDraw: { en: "Draw", ar: "\u062A\u0639\u0627\u062F\u0644", es: "Empate", de: "Unentschieden", it: "Pareggio" },
+  fold: { en: "Fold", ar: "\u0627\u0646\u0633\u062D\u0627\u0628", es: "Retirarse", de: "Aussteigen", it: "Fold" },
+  check2: { en: "Check", ar: "\u062A\u0645\u0631\u064A\u0631", es: "Pasar", de: "Passen", it: "Check" },
+  call: { en: "Call", ar: "\u0645\u062C\u0627\u0631\u0627\u0629", es: "Igualar", de: "Mitgehen", it: "Call" },
+  raise: { en: "Raise", ar: "\u0632\u064A\u0627\u062F\u0629", es: "Subir", de: "Erh\xF6hen", it: "Rilancio" },
+  pot: { en: "Pot", ar: "\u0627\u0644\u0648\u0639\u0627\u0621", es: "Bote", de: "Pot", it: "Piatto" },
+  stack: { en: "Stack", ar: "\u0627\u0644\u0631\u0635\u064A\u062F", es: "Fichas", de: "Stack", it: "Stack" },
+  nextHand: { en: "Next hand", ar: "\u0627\u0644\u062C\u0648\u0644\u0629 \u0627\u0644\u062A\u0627\u0644\u064A\u0629", es: "Siguiente mano", de: "N\xE4chste Hand", it: "Prossima mano" },
+  folded: { en: "Folded", ar: "\u0645\u0646\u0633\u062D\u0628", es: "Retirado", de: "Ausgestiegen", it: "Fold" },
+  yourHand: { en: "Your hand", ar: "\u0623\u0648\u0631\u0627\u0642\u0643", es: "Tu mano", de: "Deine Hand", it: "La tua mano" },
+  aimShoot: { en: "Drag to aim, release to shoot", ar: "\u0627\u0633\u062D\u0628 \u0644\u0644\u062A\u0635\u0648\u064A\u0628 \u0648\u0623\u0641\u0644\u062A \u0644\u0644\u0636\u0631\u0628", es: "Arrastra para apuntar, suelta para tirar", de: "Ziehen zum Zielen, loslassen zum Sto\xDFen", it: "Trascina per mirare, rilascia per tirare" },
+  ballInHand: { en: "Ball in hand \u2014 place the cue ball", ar: "\u0627\u0644\u0643\u0631\u0629 \u0628\u064A\u062F\u0643 \u2014 \u0636\u0639 \u0643\u0631\u0629 \u0627\u0644\u062A\u0633\u062F\u064A\u062F", es: "Bola en mano \u2014 coloca la bola blanca", de: "Ball in der Hand \u2014 platziere den Spielball", it: "Palla in mano \u2014 posiziona la bilia battente" },
+  yourGroup: { en: "Your group", ar: "\u0645\u062C\u0645\u0648\u0639\u062A\u0643", es: "Tu grupo", de: "Deine Gruppe", it: "Il tuo gruppo" },
+  solids: { en: "Solids", ar: "\u0627\u0644\u0645\u0635\u0645\u062A\u0629", es: "Lisas", de: "Vollkugeln", it: "Piene" },
+  stripes: { en: "Stripes", ar: "\u0627\u0644\u0645\u062E\u0637\u0637\u0629", es: "Rayadas", de: "Halbe", it: "A righe" },
+  foul: { en: "Foul", ar: "\u062E\u0637\u0623", es: "Falta", de: "Foul", it: "Fallo" },
+  chess2p: { en: "Chess needs exactly 2 players", ar: "\u0627\u0644\u0634\u0637\u0631\u0646\u062C \u064A\u062D\u062A\u0627\u062C \u0644\u0627\u0639\u0628\u064A\u0646 \u0641\u0642\u0637", es: "El ajedrez necesita exactamente 2 jugadores", de: "Schach braucht genau 2 Spieler", it: "Gli scacchi richiedono esattamente 2 giocatori" },
+  pool2p: { en: "Pool needs exactly 2 players", ar: "\u0627\u0644\u0628\u0644\u064A\u0627\u0631\u062F\u0648 \u064A\u062D\u062A\u0627\u062C \u0644\u0627\u0639\u0628\u064A\u0646 \u0641\u0642\u0637", es: "El billar necesita exactamente 2 jugadores", de: "Billard braucht genau 2 Spieler", it: "Il biliardo richiede esattamente 2 giocatori" }
+};
+const COLORS = ["red", "yellow", "green", "blue"];
+const COLOR_HEX = { red: "#B8332F", yellow: "#D97B4F", green: "#2D6A4F", blue: "#2A5C8A", wild: "#1F1B1A" };
+function buildDeck() {
+  const deck = [];
+  let id = 0;
+  for (const color of COLORS) {
+    deck.push({ id: id++, color, value: "0", type: "number" });
+    for (let n = 1; n <= 9; n++) {
+      deck.push({ id: id++, color, value: String(n), type: "number" });
+      deck.push({ id: id++, color, value: String(n), type: "number" });
+    }
+    for (const type of ["skip", "reverse", "draw2"]) {
+      deck.push({ id: id++, color, value: type, type });
+      deck.push({ id: id++, color, value: type, type });
+    }
+  }
+  for (let i = 0; i < 4; i++) deck.push({ id: id++, color: "wild", value: "wild", type: "wild" });
+  for (let i = 0; i < 4; i++) deck.push({ id: id++, color: "wild", value: "wild4", type: "wild4" });
+  return deck;
+}
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function initUnoGame(playerIds) {
+  let deck = shuffle(buildDeck());
+  const hands = {};
+  for (const pid of playerIds) {
+    hands[pid] = deck.splice(0, 7);
+  }
+  let firstUp = deck.pop();
+  while (firstUp.type === "wild4") {
+    deck.unshift(firstUp);
+    deck = shuffle(deck);
+    firstUp = deck.pop();
+  }
+  return {
+    deck,
+    discard: [firstUp],
+    hands,
+    currentIndex: 0,
+    direction: 1,
+    currentColor: firstUp.color === "wild" ? COLORS[0] : firstUp.color,
+    pendingDraw: 0,
+    unoCalled: {},
+    winnerId: null,
+    log: []
+  };
+}
+function reshuffleIfNeeded(game) {
+  if (game.deck.length === 0) {
+    const top = game.discard[game.discard.length - 1];
+    const rest = game.discard.slice(0, -1);
+    game.deck = shuffle(rest);
+    game.discard = [top];
+  }
+}
+function drawCards(game, pid, n) {
+  for (let i = 0; i < n; i++) {
+    reshuffleIfNeeded(game);
+    if (game.deck.length === 0) break;
+    game.hands[pid].push(game.deck.pop());
+  }
+}
+function canPlay(card, top, currentColor) {
+  if (card.type === "wild" || card.type === "wild4") return true;
+  if (card.color === currentColor) return true;
+  if (card.value === top.value) return true;
+  return false;
+}
+function advanceTurn(game, order, steps = 1) {
+  const n = order.length;
+  game.currentIndex = ((game.currentIndex + steps * game.direction) % n + n) % n;
+}
+function chessStartBoard() {
+  const back = ["R", "N", "B", "Q", "K", "B", "N", "R"];
+  const b = new Array(64).fill(null);
+  for (let c = 0; c < 8; c++) {
+    b[0 * 8 + c] = "w" + back[c];
+    b[1 * 8 + c] = "wP";
+    b[6 * 8 + c] = "bP";
+    b[7 * 8 + c] = "b" + back[c];
+  }
+  return b;
+}
+function sq(r, c) {
+  return r * 8 + c;
+}
+function inBoard(r, c) {
+  return r >= 0 && r < 8 && c >= 0 && c < 8;
+}
+const KNIGHT_DELTAS = [[1, 2], [2, 1], [-1, 2], [-2, 1], [1, -2], [2, -1], [-1, -2], [-2, -1]];
+const KING_DELTAS = [[1, 0], [-1, 0], [0, 1], [0, -1], [1, 1], [1, -1], [-1, 1], [-1, -1]];
+const BISHOP_DIRS = [[1, 1], [1, -1], [-1, 1], [-1, -1]];
+const ROOK_DIRS = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+function genPseudoMoves(board, i, state) {
+  const piece = board[i];
+  if (!piece) return [];
+  const color = piece[0], type = piece[1];
+  const r = Math.floor(i / 8), c = i % 8;
+  const moves = [];
+  const push = (tr, tc, opts = {}) => {
+    if (!inBoard(tr, tc)) return;
+    const ti = sq(tr, tc);
+    const target = board[ti];
+    if (target && target[0] === color) return;
+    moves.push({ from: i, to: ti, capture: !!target, ...opts });
+  };
+  if (type === "P") {
+    const dir = color === "w" ? 1 : -1;
+    const startRow = color === "w" ? 1 : 6;
+    const promoRow = color === "w" ? 7 : 0;
+    const oneR = r + dir;
+    if (inBoard(oneR, c) && !board[sq(oneR, c)]) {
+      push(oneR, c, { promo: oneR === promoRow });
+      const twoR = r + dir * 2;
+      if (r === startRow && !board[sq(twoR, c)]) push(twoR, c, { doubleStep: true });
+    }
+    for (const dc of [-1, 1]) {
+      const tr = r + dir, tc = c + dc;
+      if (!inBoard(tr, tc)) continue;
+      const ti = sq(tr, tc);
+      if (board[ti] && board[ti][0] !== color) push(tr, tc, { promo: tr === promoRow, capture: true });
+      else if (state && state.enPassant === ti) push(tr, tc, { enPassant: true, capture: true });
+    }
+  } else if (type === "N") {
+    for (const [dr, dc] of KNIGHT_DELTAS) push(r + dr, c + dc);
+  } else if (type === "K") {
+    for (const [dr, dc] of KING_DELTAS) push(r + dr, c + dc);
+    if (state) {
+      const rights = state.castling;
+      const rank = color === "w" ? 0 : 7;
+      if (r === rank && c === 4) {
+        if (rights[color + "K"] && !board[sq(rank, 5)] && !board[sq(rank, 6)] && board[sq(rank, 7)] === color + "R") {
+          if (!isSquareAttacked(board, sq(rank, 4), color === "w" ? "b" : "w") && !isSquareAttacked(board, sq(rank, 5), color === "w" ? "b" : "w") && !isSquareAttacked(board, sq(rank, 6), color === "w" ? "b" : "w")) {
+            moves.push({ from: i, to: sq(rank, 6), castle: "K" });
+          }
+        }
+        if (rights[color + "Q"] && !board[sq(rank, 3)] && !board[sq(rank, 2)] && !board[sq(rank, 1)] && board[sq(rank, 0)] === color + "R") {
+          if (!isSquareAttacked(board, sq(rank, 4), color === "w" ? "b" : "w") && !isSquareAttacked(board, sq(rank, 3), color === "w" ? "b" : "w") && !isSquareAttacked(board, sq(rank, 2), color === "w" ? "b" : "w")) {
+            moves.push({ from: i, to: sq(rank, 2), castle: "Q" });
+          }
+        }
+      }
+    }
+  } else {
+    const dirs = type === "B" ? BISHOP_DIRS : type === "R" ? ROOK_DIRS : [...BISHOP_DIRS, ...ROOK_DIRS];
+    for (const [dr, dc] of dirs) {
+      let tr = r + dr, tc = c + dc;
+      while (inBoard(tr, tc)) {
+        const ti = sq(tr, tc);
+        const target = board[ti];
+        if (target) {
+          if (target[0] !== color) moves.push({ from: i, to: ti, capture: true });
+          break;
+        }
+        moves.push({ from: i, to: ti, capture: false });
+        tr += dr;
+        tc += dc;
+      }
+    }
+  }
+  return moves;
+}
+function isSquareAttacked(board, targetSq, byColor) {
+  for (let i = 0; i < 64; i++) {
+    const p = board[i];
+    if (!p || p[0] !== byColor) continue;
+    const type = p[1];
+    const r = Math.floor(i / 8), c = i % 8;
+    if (type === "P") {
+      const dir = byColor === "w" ? 1 : -1;
+      for (const dc of [-1, 1]) {
+        const tr = r + dir, tc = c + dc;
+        if (inBoard(tr, tc) && sq(tr, tc) === targetSq) return true;
+      }
+      continue;
+    }
+    const moves = genPseudoMoves(board, i, null);
+    if (moves.some((m) => m.to === targetSq)) return true;
+  }
+  return false;
+}
+function findKing(board, color) {
+  for (let i = 0; i < 64; i++) if (board[i] === color + "K") return i;
+  return -1;
+}
+function applyMove(board, move, castlingIn, enPassantTargetIn) {
+  const b = board.slice();
+  const piece = b[move.from];
+  const color = piece[0];
+  if (move.enPassant) {
+    const capR = Math.floor(move.from / 8);
+    const capC = move.to % 8;
+    b[sq(capR, capC)] = null;
+  }
+  b[move.to] = move.promo ? color + "Q" : piece;
+  b[move.from] = null;
+  if (move.castle === "K") {
+    const rank = color === "w" ? 0 : 7;
+    b[sq(rank, 5)] = color + "R";
+    b[sq(rank, 7)] = null;
+  } else if (move.castle === "Q") {
+    const rank = color === "w" ? 0 : 7;
+    b[sq(rank, 3)] = color + "R";
+    b[sq(rank, 0)] = null;
+  }
+  const castling = { ...castlingIn };
+  if (piece[1] === "K") {
+    castling[color + "K"] = false;
+    castling[color + "Q"] = false;
+  }
+  if (move.from === sq(0, 0) || move.to === sq(0, 0)) castling.wQ = false;
+  if (move.from === sq(0, 7) || move.to === sq(0, 7)) castling.wK = false;
+  if (move.from === sq(7, 0) || move.to === sq(7, 0)) castling.bQ = false;
+  if (move.from === sq(7, 7) || move.to === sq(7, 7)) castling.bK = false;
+  let enPassant = null;
+  if (move.doubleStep) enPassant = (move.from + move.to) / 2;
+  return { board: b, castling, enPassant };
+}
+function legalMovesFrom(state, i) {
+  const piece = state.board[i];
+  if (!piece) return [];
+  const color = piece[0];
+  const pseudo = genPseudoMoves(state.board, i, state);
+  return pseudo.filter((m) => {
+    const { board: nb } = applyMove(state.board, m, state.castling, state.enPassant);
+    const kingSq = findKing(nb, color);
+    return !isSquareAttacked(nb, kingSq, color === "w" ? "b" : "w");
+  });
+}
+function allLegalMoves(state, color) {
+  const out = [];
+  for (let i = 0; i < 64; i++) {
+    if (state.board[i] && state.board[i][0] === color) out.push(...legalMovesFrom(state, i));
+  }
+  return out;
+}
+function initChessGame(playerIds) {
+  return {
+    board: chessStartBoard(),
+    turn: "w",
+    colorOf: { [playerIds[0]]: "w", [playerIds[1]]: "b" },
+    castling: { wK: true, wQ: true, bK: true, bQ: true },
+    enPassant: null,
+    lastMove: null,
+    inCheck: false,
+    winnerId: null,
+    drawReason: null
+  };
+}
+function chessMakeMove(state, move) {
+  const { board, castling, enPassant } = applyMove(state.board, move, state.castling, state.enPassant);
+  const nextTurn = state.turn === "w" ? "b" : "w";
+  const nextState = { ...state, board, castling, enPassant, turn: nextTurn, lastMove: { from: move.from, to: move.to } };
+  const kingSq = findKing(board, nextTurn);
+  const inCheck = isSquareAttacked(board, kingSq, nextTurn === "w" ? "b" : "w");
+  nextState.inCheck = inCheck;
+  const legal = allLegalMoves(nextState, nextTurn);
+  if (legal.length === 0) {
+    if (inCheck) {
+      nextState.winnerId = "COLOR:" + state.turn;
+    } else {
+      nextState.winnerId = "draw";
+      nextState.drawReason = "stalemate";
+    }
+  }
+  return nextState;
+}
+const RANKS = "23456789TJQKA";
+function pokerDeck() {
+  const suits = ["s", "h", "d", "c"];
+  const deck = [];
+  for (const s of suits) for (const r of RANKS) deck.push(r + s);
+  return shuffle(deck);
+}
+function rankValue(card) {
+  return RANKS.indexOf(card[0]) + 2;
+}
+function evaluate5(cards) {
+  const values = cards.map(rankValue).sort((a, b) => b - a);
+  const suits = cards.map((c) => c[1]);
+  const isFlush = suits.every((s) => s === suits[0]);
+  const counts = {};
+  for (const v of values) counts[v] = (counts[v] || 0) + 1;
+  const groups = Object.entries(counts).map(([v, n]) => [Number(v), n]).sort((a, b) => b[1] - a[1] || b[0] - a[0]);
+  const uniqVals = [...new Set(values)];
+  let isStraight = false, straightHigh = 0;
+  if (uniqVals.length === 5) {
+    if (uniqVals[0] - uniqVals[4] === 4) {
+      isStraight = true;
+      straightHigh = uniqVals[0];
+    } else if (uniqVals.join(",") === "14,5,4,3,2") {
+      isStraight = true;
+      straightHigh = 5;
+    }
+  }
+  const kickers = groups.map((g) => g[0]);
+  if (isStraight && isFlush) return [8, straightHigh];
+  if (groups[0][1] === 4) return [7, groups[0][0], groups[1][0]];
+  if (groups[0][1] === 3 && groups[1][1] === 2) return [6, groups[0][0], groups[1][0]];
+  if (isFlush) return [5, ...values];
+  if (isStraight) return [4, straightHigh];
+  if (groups[0][1] === 3) return [3, groups[0][0], ...kickers.slice(1)];
+  if (groups[0][1] === 2 && groups[1][1] === 2) return [2, groups[0][0], groups[1][0], groups[2][0]];
+  if (groups[0][1] === 2) return [1, groups[0][0], ...kickers.slice(1)];
+  return [0, ...values];
+}
+function compareHands(a, b) {
+  for (let i = 0; i < Math.max(a.length, b.length); i++) {
+    const av = a[i] || 0, bv = b[i] || 0;
+    if (av !== bv) return av - bv;
+  }
+  return 0;
+}
+function combinations(arr, k) {
+  const out = [];
+  const rec = (start, cur) => {
+    if (cur.length === k) {
+      out.push(cur.slice());
+      return;
+    }
+    for (let i = start; i < arr.length; i++) {
+      cur.push(arr[i]);
+      rec(i + 1, cur);
+      cur.pop();
+    }
+  };
+  rec(0, []);
+  return out;
+}
+function bestHand7(cards) {
+  let best = null;
+  for (const combo of combinations(cards, 5)) {
+    const val = evaluate5(combo);
+    if (!best || compareHands(val, best) > 0) best = val;
+  }
+  return best;
+}
+const HAND_NAMES = ["High Card", "Pair", "Two Pair", "Trips", "Straight", "Flush", "Full House", "Quads", "Straight Flush"];
+function initPokerGame(playerIds) {
+  const stacks = {};
+  playerIds.forEach((id) => stacks[id] = 500);
+  const game = {
+    stacks,
+    deck: [],
+    hole: {},
+    community: [],
+    folded: {},
+    allIn: {},
+    bets: {},
+    totalContrib: {},
+    pot: 0,
+    round: "preflop",
+    currentBet: 0,
+    minRaise: 10,
+    dealerIndex: -1,
+    toActIndex: 0,
+    actedSet: [],
+    handNumber: 0,
+    handWinnerIds: null,
+    handWinnerDesc: null,
+    showHole: null
+  };
+  return pokerStartHand(game, playerIds);
+}
+function pokerStartHand(gameIn, playerIds) {
+  const game = { ...gameIn };
+  const active = playerIds.filter((id) => game.stacks[id] > 0);
+  game.deck = pokerDeck();
+  game.hole = {};
+  game.community = [];
+  game.folded = {};
+  game.allIn = {};
+  game.bets = {};
+  game.totalContrib = {};
+  game.pot = 0;
+  game.round = "preflop";
+  game.currentBet = 0;
+  game.minRaise = 10;
+  game.handNumber = (game.handNumber || 0) + 1;
+  game.handWinnerIds = null;
+  game.handWinnerDesc = null;
+  game.showHole = null;
+  playerIds.forEach((id) => {
+    game.folded[id] = active.indexOf(id) === -1;
+    game.allIn[id] = false;
+    game.bets[id] = 0;
+    game.totalContrib[id] = 0;
+    game.hole[id] = active.includes(id) ? [game.deck.pop(), game.deck.pop()] : [];
+  });
+  game.dealerIndex = active.length ? (game.dealerIndex + 1) % playerIds.length : 0;
+  while (game.folded[playerIds[game.dealerIndex]]) game.dealerIndex = (game.dealerIndex + 1) % playerIds.length;
+  const n = playerIds.length;
+  const sbIndex = nextActiveIndex(playerIds, game, game.dealerIndex);
+  const bbIndex = nextActiveIndex(playerIds, game, sbIndex);
+  postBet(game, playerIds[sbIndex], 5);
+  postBet(game, playerIds[bbIndex], 10);
+  game.currentBet = 10;
+  game.toActIndex = nextActiveIndex(playerIds, game, bbIndex);
+  game.actedSet = [];
+  game.lastRaiserId = playerIds[bbIndex];
+  return game;
+}
+function nextActiveIndex(playerIds, game, fromIndex) {
+  const n = playerIds.length;
+  let idx = (fromIndex + 1) % n;
+  let guard = 0;
+  while (game.folded[playerIds[idx]] && guard < n) {
+    idx = (idx + 1) % n;
+    guard++;
+  }
+  return idx;
+}
+function postBet(game, pid, amount) {
+  const actual = Math.min(amount, game.stacks[pid]);
+  game.stacks[pid] -= actual;
+  game.bets[pid] = (game.bets[pid] || 0) + actual;
+  game.totalContrib[pid] = (game.totalContrib[pid] || 0) + actual;
+  game.pot += actual;
+  if (game.stacks[pid] === 0) game.allIn[pid] = true;
+}
+function activePlayers(playerIds, game) {
+  return playerIds.filter((id) => !game.folded[id]);
+}
+function pokerAdvance(gameIn, playerIds, action, amount) {
+  const game = JSON.parse(JSON.stringify(gameIn));
+  const pid = playerIds[game.toActIndex];
+  if (action === "fold") {
+    game.folded[pid] = true;
+  } else if (action === "check") {
+  } else if (action === "call") {
+    const need = game.currentBet - (game.bets[pid] || 0);
+    postBet(game, pid, need);
+  } else if (action === "raise") {
+    const need = game.currentBet - (game.bets[pid] || 0);
+    postBet(game, pid, need + amount);
+    game.currentBet = game.bets[pid];
+    game.minRaise = amount;
+    game.lastRaiserId = pid;
+    game.actedSet = [];
+  }
+  game.actedSet = [.../* @__PURE__ */ new Set([...game.actedSet, pid])];
+  const remaining = activePlayers(playerIds, game);
+  if (remaining.length === 1) {
+    return pokerAwardPot(game, playerIds, remaining, "Last player standing");
+  }
+  const contestants = remaining.filter((id) => !game.allIn[id]);
+  const roundDone = contestants.every((id) => game.actedSet.includes(id) && game.bets[id] === game.currentBet);
+  if (roundDone) {
+    return pokerNextRound(game, playerIds);
+  }
+  game.toActIndex = nextActiveIndex(playerIds, game, game.toActIndex);
+  return game;
+}
+function pokerNextRound(game, playerIds) {
+  Object.keys(game.bets).forEach((id) => game.bets[id] = 0);
+  game.currentBet = 0;
+  game.actedSet = [];
+  game.minRaise = 10;
+  if (game.round === "preflop") {
+    game.community.push(game.deck.pop(), game.deck.pop(), game.deck.pop());
+    game.round = "flop";
+  } else if (game.round === "flop") {
+    game.community.push(game.deck.pop());
+    game.round = "turn";
+  } else if (game.round === "turn") {
+    game.community.push(game.deck.pop());
+    game.round = "river";
+  } else {
+    const remaining = activePlayers(playerIds, game);
+    return pokerAwardPot(game, playerIds, remaining, null);
+  }
+  game.toActIndex = nextActiveIndex(playerIds, game, game.dealerIndex);
+  return game;
+}
+function pokerAwardPot(game, playerIds, remaining, forcedReason) {
+  let winners, desc;
+  if (remaining.length === 1) {
+    winners = remaining;
+    desc = forcedReason || "Winner";
+  } else {
+    let best = null;
+    winners = [];
+    for (const id of remaining) {
+      const val = bestHand7([...game.hole[id], ...game.community]);
+      if (!best || compareHands(val, best) > 0) {
+        best = val;
+        winners = [id];
+      } else if (compareHands(val, best) === 0) winners.push(id);
+    }
+    desc = HAND_NAMES[best[0]];
+    game.showHole = remaining;
+  }
+  const share = Math.floor(game.pot / winners.length);
+  winners.forEach((id) => game.stacks[id] += share);
+  game.handWinnerIds = winners;
+  game.handWinnerDesc = desc;
+  game.round = "showdown";
+  return game;
+}
+const POOL_W = 760, POOL_H = 380, BALL_R = 11;
+const POOL_POCKETS = [
+  { x: 18, y: 18 },
+  { x: POOL_W / 2, y: 10 },
+  { x: POOL_W - 18, y: 18 },
+  { x: 18, y: POOL_H - 18 },
+  { x: POOL_W / 2, y: POOL_H - 10 },
+  { x: POOL_W - 18, y: POOL_H - 18 }
+];
+function poolRackPositions() {
+  const balls = [];
+  balls.push({ id: 0, num: 0, type: "cue", x: POOL_W * 0.25, y: POOL_H / 2, vx: 0, vy: 0, active: true });
+  const order = [1, 9, 2, 10, 3, 8, 4, 11, 5, 12, 6, 13, 7, 14, 15];
+  const startX = POOL_W * 0.72;
+  const startY = POOL_H / 2;
+  let idx = 0;
+  for (let row = 0; row < 5; row++) {
+    for (let k = 0; k <= row; k++) {
+      const num = order[idx++];
+      const type = num === 8 ? "eight" : num < 8 ? "solid" : "stripe";
+      const x = startX + row * (BALL_R * 1.8);
+      const y = startY - row * BALL_R + k * BALL_R * 2;
+      balls.push({ id: num, num, type, x, y, vx: 0, vy: 0, active: true });
+    }
+  }
+  return balls;
+}
+function initPoolGame(playerIds) {
+  return {
+    balls: poolRackPositions(),
+    turnIndex: 0,
+    assigned: {},
+    ballInHand: false,
+    shotInProgress: false,
+    winnerId: null,
+    lastPocketed: [],
+    log: null
+  };
+}
+function poolSimulate(balls, angle, power) {
+  const b = balls.map((x) => ({ ...x }));
+  const cue = b.find((x) => x.type === "cue");
+  cue.vx = Math.cos(angle) * power;
+  cue.vy = Math.sin(angle) * power;
+  const frames = [];
+  const friction = 0.988;
+  const minV = 0.04;
+  let firstHit = null;
+  const pocketed = [];
+  for (let step = 0; step < 900; step++) {
+    let moving = false;
+    for (const ball of b) {
+      if (!ball.active) continue;
+      ball.x += ball.vx;
+      ball.y += ball.vy;
+      ball.vx *= friction;
+      ball.vy *= friction;
+      if (Math.abs(ball.vx) < minV) ball.vx = 0;
+      if (Math.abs(ball.vy) < minV) ball.vy = 0;
+      if (ball.x < BALL_R || ball.x > POOL_W - BALL_R) {
+        ball.vx *= -0.9;
+        ball.x = Math.max(BALL_R, Math.min(POOL_W - BALL_R, ball.x));
+      }
+      if (ball.y < BALL_R || ball.y > POOL_H - BALL_R) {
+        ball.vy *= -0.9;
+        ball.y = Math.max(BALL_R, Math.min(POOL_H - BALL_R, ball.y));
+      }
+      if (ball.vx !== 0 || ball.vy !== 0) moving = true;
+    }
+    for (let i = 0; i < b.length; i++) {
+      for (let j = i + 1; j < b.length; j++) {
+        const a = b[i], c = b[j];
+        if (!a.active || !c.active) continue;
+        const dx = c.x - a.x, dy = c.y - a.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < BALL_R * 2 && dist > 0) {
+          if (a.type === "cue" && firstHit === null && c.active) firstHit = c.num;
+          if (c.type === "cue" && firstHit === null && a.active) firstHit = a.num;
+          const nx = dx / dist, ny = dy / dist;
+          const overlap = BALL_R * 2 - dist;
+          a.x -= nx * overlap / 2;
+          a.y -= ny * overlap / 2;
+          c.x += nx * overlap / 2;
+          c.y += ny * overlap / 2;
+          const avn = a.vx * nx + a.vy * ny;
+          const cvn = c.vx * nx + c.vy * ny;
+          a.vx += (cvn - avn) * nx;
+          a.vy += (cvn - avn) * ny;
+          c.vx += (avn - cvn) * nx;
+          c.vy += (avn - cvn) * ny;
+        }
+      }
+    }
+    for (const ball of b) {
+      if (!ball.active) continue;
+      for (const p of POOL_POCKETS) {
+        const dx = ball.x - p.x, dy = ball.y - p.y;
+        if (Math.sqrt(dx * dx + dy * dy) < 15) {
+          ball.active = false;
+          ball.vx = 0;
+          ball.vy = 0;
+          pocketed.push(ball.num);
+        }
+      }
+    }
+    if (step % 3 === 0) frames.push(b.map((x) => ({ id: x.id, x: x.x, y: x.y, active: x.active })));
+    if (!moving) break;
+  }
+  return { frames, finalBalls: b, pocketed, firstHit };
+}
+function randomCode() {
+  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  let s = "";
+  for (let i = 0; i < 5; i++) s += chars[Math.floor(Math.random() * chars.length)];
+  return s;
+}
+function randomId() {
+  return Math.random().toString(36).slice(2, 10);
+}
+const PFP_CATALOG = [
+  { id: "joker", emoji: "\u{1F0CF}", cost: 0 },
+  { id: "hat", emoji: "\u{1F3A9}", cost: 0 },
+  { id: "fox", emoji: "\u{1F98A}", cost: 0 },
+  { id: "panda", emoji: "\u{1F43C}", cost: 0 },
+  { id: "ghost", emoji: "\u{1F47B}", cost: 70 },
+  { id: "ninja", emoji: "\u{1F977}", cost: 100 },
+  { id: "robot", emoji: "\u{1F916}", cost: 90 },
+  { id: "wizard", emoji: "\u{1F9D9}", cost: 120 },
+  { id: "alien", emoji: "\u{1F47D}", cost: 110 },
+  { id: "lion", emoji: "\u{1F981}", cost: 80 },
+  { id: "dragon", emoji: "\u{1F409}", cost: 150 },
+  { id: "crown", emoji: "\u{1F451}", cost: 200 }
+];
+const NAME_COLOR_CATALOG = [
+  { id: "ivory", hex: "#F1EDF7", cost: 0 },
+  { id: "copper", hex: "#9B5DE5", cost: 0 },
+  { id: "rose", hex: "#E4577B", cost: 60 },
+  { id: "teal", hex: "#4FB4A6", cost: 60 },
+  { id: "violet", hex: "#A98CE0", cost: 60 },
+  { id: "sky", hex: "#5FA8E0", cost: 60 },
+  { id: "gold", hex: "#F0C24B", cost: 90 }
+];
+const EFFECT_CATALOG = [
+  { id: "none", cost: 0 },
+  { id: "bronzering", cost: 50 },
+  { id: "silverring", cost: 90 },
+  { id: "goldaura", cost: 160 },
+  { id: "sparkle", cost: 140 },
+  { id: "fire", cost: 180 }
+];
+const THEME_CATALOG = [
+  { id: "violet", cost: 0, bgTop: "#2E1650", bgBottom: "#0D0812", accent: "#9B5DE5", accentDark: "#6A3FA0", accentRgb: "155,93,229" },
+  { id: "ocean", cost: 80, bgTop: "#0E3350", bgBottom: "#081420", accent: "#4FA3D9", accentDark: "#2E6E9E", accentRgb: "79,163,217" },
+  { id: "crimson", cost: 80, bgTop: "#4A1220", bgBottom: "#160608", accent: "#E2586E", accentDark: "#9E3448", accentRgb: "226,88,110" },
+  { id: "emerald", cost: 100, bgTop: "#0F3D2E", bgBottom: "#071712", accent: "#3FC97D", accentDark: "#238A54", accentRgb: "63,201,125" },
+  { id: "sunset", cost: 100, bgTop: "#4A2410", bgBottom: "#180C04", accent: "#E7935F", accentDark: "#C96A3E", accentRgb: "231,147,95" },
+  { id: "midnight", cost: 140, bgTop: "#141A2E", bgBottom: "#05070E", accent: "#6E7FE0", accentDark: "#4650A0", accentRgb: "110,127,224" }
+];
+function getTheme(id) {
+  return THEME_CATALOG.find((th) => th.id === id) || THEME_CATALOG[0];
+}
+const TIERS = [
+  { id: "rookie", min: 0, color: "#9A9AA0" },
+  { id: "bronze", min: 5, color: "#C1690E" },
+  { id: "silver", min: 15, color: "#C7CDD6" },
+  { id: "gold", min: 30, color: "#F0C24B" },
+  { id: "diamond", min: 60, color: "#6FD4D0" }
+];
+function getTier(gamesPlayed) {
+  let cur = TIERS[0];
+  for (const tr of TIERS) if (gamesPlayed >= tr.min) cur = tr;
+  return cur;
+}
+function nextTier(gamesPlayed) {
+  return TIERS.find((tr) => tr.min > gamesPlayed) || null;
+}
+function pfpEmoji(id) {
+  return (PFP_CATALOG.find((p) => p.id === id) || PFP_CATALOG[0]).emoji;
+}
+function nameColorHex(id) {
+  return (NAME_COLOR_CATALOG.find((c) => c.id === id) || NAME_COLOR_CATALOG[0]).hex;
+}
+function defaultProfile(name) {
+  return {
+    name: name || "",
+    pfp: "joker",
+    nameColor: "ivory",
+    effect: "none",
+    theme: "violet",
+    coins: 0,
+    gamesPlayed: 0,
+    wins: 0,
+    ownedPfps: ["joker", "hat", "fox", "panda"],
+    ownedColors: ["ivory", "copper"],
+    ownedEffects: ["none"],
+    ownedThemes: ["violet"]
+  };
+}
+function CoinIcon({ size = 14 }) {
+  return /* @__PURE__ */ React.createElement("svg", { width: size, height: size, viewBox: "0 0 20 20", style: { verticalAlign: "-2px", flexShrink: 0 } }, /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("linearGradient", { id: "caCoinGrad", x1: "0", y1: "0", x2: "1", y2: "1" }, /* @__PURE__ */ React.createElement("stop", { offset: "0%", stopColor: "#F7D97A" }), /* @__PURE__ */ React.createElement("stop", { offset: "100%", stopColor: "#D9A93E" }))), /* @__PURE__ */ React.createElement("circle", { cx: "10", cy: "10", r: "9", fill: "url(#caCoinGrad)", stroke: "#8C6A1E", strokeWidth: "1" }), /* @__PURE__ */ React.createElement("circle", { cx: "10", cy: "10", r: "6", fill: "none", stroke: "#8C6A1E", strokeWidth: "1", opacity: "0.5" }), /* @__PURE__ */ React.createElement("text", { x: "10", y: "13.5", fontSize: "9", textAnchor: "middle", fontWeight: "800", fill: "#8C6A1E" }, "\xA2"));
+}
+async function copyToClipboard(text) {
+  try {
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch (e) {
+  }
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    ta.style.top = "0";
+    ta.style.left = "0";
+    document.body.appendChild(ta);
+    ta.focus();
+    ta.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(ta);
+    return ok;
+  } catch (e) {
+    return false;
+  }
+}
+function TurnTimer({ active, seconds = 30, onExpire }) {
+  const [remaining, setRemaining] = useState(seconds);
+  const expiredRef = useRef(false);
+  const onExpireRef = useRef(onExpire);
+  onExpireRef.current = onExpire;
+  useEffect(() => {
+    if (!active) {
+      setRemaining(seconds);
+      expiredRef.current = false;
+      return;
+    }
+    setRemaining(seconds);
+    expiredRef.current = false;
+    const start = Date.now();
+    const id = setInterval(() => {
+      const left = Math.max(0, seconds - (Date.now() - start) / 1e3);
+      setRemaining(left);
+      if (left <= 0 && !expiredRef.current) {
+        expiredRef.current = true;
+        clearInterval(id);
+        onExpireRef.current && onExpireRef.current();
+      }
+    }, 200);
+    return () => clearInterval(id);
+  }, [active, seconds]);
+  if (!active) return null;
+  const pct = Math.max(0, remaining / seconds);
+  const low = remaining <= seconds * 0.3;
+  return /* @__PURE__ */ React.createElement("div", { style: { width: 100, margin: "8px auto 0", textAlign: "center" } }, /* @__PURE__ */ React.createElement("div", { style: { width: "100%", height: 6, borderRadius: 4, background: "rgba(241,237,247,.15)", overflow: "hidden" } }, /* @__PURE__ */ React.createElement("div", { style: { width: `${pct * 100}%`, height: "100%", background: low ? "#C1554A" : "#2FA85A", transition: "width .2s linear" } })), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.6, marginTop: 3 } }, Math.ceil(remaining), "s"));
+}
+function Avatar({ pfp, effect = "none", size = 40 }) {
+  let ring = { border: "2px solid rgba(241,237,247,.28)" };
+  let extra = null;
+  if (effect === "bronzering") {
+    ring = { border: "3px solid #C1690E", boxShadow: "0 0 8px rgba(193,105,14,.5)" };
+  } else if (effect === "silverring") {
+    ring = { border: "3px solid #C7CDD6", boxShadow: "0 0 8px rgba(199,205,214,.5)" };
+  } else if (effect === "goldaura") {
+    ring = { border: "3px solid #F0C24B" };
+    extra = /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", inset: -6, borderRadius: "50%", boxShadow: "0 0 14px 4px rgba(240,194,75,.55)", animation: "ca-shimmer 1.8s ease-in-out infinite", pointerEvents: "none" } });
+  } else if (effect === "fire") {
+    ring = { border: "3px solid #E2703A" };
+    extra = /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", inset: -6, borderRadius: "50%", boxShadow: "0 0 16px 5px rgba(226,112,58,.6)", animation: "ca-shimmer 1s ease-in-out infinite", pointerEvents: "none" } });
+  } else if (effect === "sparkle") {
+    extra = /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: -6, insetInlineEnd: -4, fontSize: size * 0.32, animation: "ca-spin-slow 3s linear infinite" } }, "\u2728");
+  }
+  return /* @__PURE__ */ React.createElement("div", { style: {
+    width: size,
+    height: size,
+    borderRadius: "50%",
+    position: "relative",
+    flexShrink: 0,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: size * 0.55,
+    background: "rgba(241,237,247,.08)",
+    ...ring
+  } }, pfpEmoji(pfp), extra);
+}
+const AVATAR_COLORS = ["#B8332F", "#D97B4F", "#2D6A4F", "#2A5C8A", "#8A4B9E", "#C1690E", "#3C7A7A", "#9E4B6E"];
+let _audioCtx = null;
+function getCtx() {
+  const AC = window.AudioContext || window.webkitAudioContext;
+  if (!AC) return null;
+  if (!_audioCtx) _audioCtx = new AC();
+  if (_audioCtx.state === "suspended") _audioCtx.resume();
+  return _audioCtx;
+}
+function tone(freq, start, dur, type = "sine", peak = 0.16) {
+  const ctx = getCtx();
+  if (!ctx) return;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type;
+  osc.frequency.setValueAtTime(freq, ctx.currentTime + start);
+  gain.gain.setValueAtTime(0, ctx.currentTime + start);
+  gain.gain.linearRampToValueAtTime(peak, ctx.currentTime + start + 0.015);
+  gain.gain.exponentialRampToValueAtTime(1e-4, ctx.currentTime + start + dur);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(ctx.currentTime + start);
+  osc.stop(ctx.currentTime + start + dur + 0.03);
+}
+function noiseBurst(start, dur, peak = 0.11) {
+  const ctx = getCtx();
+  if (!ctx) return;
+  const size = Math.max(1, Math.floor(ctx.sampleRate * dur));
+  const buffer = ctx.createBuffer(1, size, ctx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < size; i++) data[i] = (Math.random() * 2 - 1) * (1 - i / size);
+  const src = ctx.createBufferSource();
+  src.buffer = buffer;
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(peak, ctx.currentTime + start);
+  gain.gain.exponentialRampToValueAtTime(1e-4, ctx.currentTime + start + dur);
+  src.connect(gain);
+  gain.connect(ctx.destination);
+  src.start(ctx.currentTime + start);
+}
+const SFX = {
+  click: () => tone(520, 0, 0.07, "triangle", 0.12),
+  open: () => tone(420, 0, 0.06, "sine", 0.08),
+  play: () => {
+    tone(660, 0, 0.09, "sine", 0.15);
+    tone(920, 0.05, 0.1, "sine", 0.11);
+  },
+  invalid: () => tone(170, 0, 0.14, "sawtooth", 0.13),
+  draw: () => noiseBurst(0, 0.16, 0.1),
+  turn: () => tone(740, 0, 0.08, "sine", 0.1),
+  uno: () => {
+    tone(880, 0, 0.08, "square", 0.13);
+    tone(1174, 0.09, 0.1, "square", 0.15);
+    tone(1568, 0.19, 0.16, "square", 0.15);
+  },
+  win: () => [523, 659, 784, 1046, 1318].forEach((f, i) => tone(f, i * 0.11, 0.22, "triangle", 0.17))
+};
+function makeSfx(enabled) {
+  return (name) => {
+    if (enabled && SFX[name]) {
+      try {
+        SFX[name]();
+      } catch (e) {
+      }
+    }
+  };
+}
+const CURSOR_SVG = encodeURIComponent(
+  `<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'>
+     <g transform='rotate(-16 15 15)'>
+       <rect x='7' y='5' width='15' height='20' rx='3' fill='#F1EDF7' stroke='#2E1650' stroke-width='2'/>
+       <text x='14.5' y='19' font-size='11' text-anchor='middle' fill='#C1554A' font-family='Georgia' font-weight='bold'>\u2660</text>
+     </g>
+   </svg>`
+);
+const CURSOR_CSS = `url("data:image/svg+xml,${CURSOR_SVG}") 6 4, auto`;
+const SUITS = [
+  { s: "\u2660", color: "#170B26" },
+  { s: "\u2665", color: "#A6453D" },
+  { s: "\u2666", color: "#A6453D" },
+  { s: "\u2663", color: "#170B26" }
+];
+function PokerCard({ rank, suitIdx, rotate, tx, ty, delay, scale = 1 }) {
+  const suit = SUITS[suitIdx % SUITS.length];
+  return /* @__PURE__ */ React.createElement("div", { style: {
+    position: "absolute",
+    left: tx,
+    top: ty,
+    width: 76 * scale,
+    height: 108 * scale,
+    borderRadius: 8,
+    background: "linear-gradient(160deg, #FBF8F1, #EDE6D6)",
+    border: "1px solid rgba(0,0,0,.12)",
+    boxShadow: "0 18px 30px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2)",
+    transform: `perspective(700px) rotate3d(0.3, 1, 0.1, ${rotate}deg)`,
+    animation: `ca-float-slow 6s ease-in-out ${delay}s infinite`,
+    pointerEvents: "none"
+  } }, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 6, left: 8, fontSize: 13 * scale, fontWeight: 800, color: suit.color, fontFamily: "Georgia, serif", lineHeight: 1 } }, rank, /* @__PURE__ */ React.createElement("br", null), suit.s), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 34 * scale, color: suit.color, fontFamily: "Georgia, serif" } }, suit.s), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 6, right: 8, fontSize: 13 * scale, fontWeight: 800, color: suit.color, fontFamily: "Georgia, serif", lineHeight: 1, transform: "rotate(180deg)" } }, rank, /* @__PURE__ */ React.createElement("br", null), suit.s));
+}
+function CornerFlourish() {
+  return /* @__PURE__ */ React.createElement("div", { style: { position: "fixed", inset: 0, zIndex: 0, overflow: "hidden", pointerEvents: "none" } }, /* @__PURE__ */ React.createElement(PokerCard, { rank: "A", suitIdx: 1, rotate: -18, tx: "-30px", ty: "-10px", delay: 0, scale: 1.15 }), /* @__PURE__ */ React.createElement(PokerCard, { rank: "K", suitIdx: 0, rotate: 8, tx: "10px", ty: "40px", delay: 0.6, scale: 0.95 }), /* @__PURE__ */ React.createElement(PokerCard, { rank: "Q", suitIdx: 2, rotate: 20, tx: "calc(100% - 60px)", ty: "-16px", delay: 0.3, scale: 1.05 }), /* @__PURE__ */ React.createElement(PokerCard, { rank: "J", suitIdx: 3, rotate: -10, tx: "calc(100% - 90px)", ty: "52px", delay: 0.9, scale: 0.9 }));
+}
+const FLOATERS = Array.from({ length: 10 }, (_, i) => ({
+  suit: SUITS[i % 4].s,
+  color: SUITS[i % 4].color,
+  left: i * 37 % 100,
+  size: 18 + i % 4 * 8,
+  dur: 10 + i % 5 * 3,
+  delay: i * 0.7 % 6
+}));
+function AmbientSuits() {
+  return /* @__PURE__ */ React.createElement("div", { style: { position: "fixed", inset: 0, zIndex: 0, overflow: "hidden", pointerEvents: "none", opacity: 0.14 } }, FLOATERS.map((f, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: {
+    position: "absolute",
+    left: `${f.left}%`,
+    top: "-40px",
+    fontSize: f.size,
+    color: "#F1EDF7",
+    animation: `ca-drift ${f.dur}s linear ${f.delay}s infinite`
+  } }, f.suit)));
+}
+const CONFETTI_COLORS = ["var(--ca-accent)", "#2FA85A", "#C1554A", "var(--ca-accent-dark)", "#F1EDF7"];
+const CONFETTI = Array.from({ length: 46 }, (_, i) => ({
+  left: Math.random() * 100,
+  color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+  size: 6 + Math.random() * 7,
+  dur: 2.4 + Math.random() * 1.8,
+  delay: Math.random() * 0.6,
+  rot: Math.random() * 360,
+  round: Math.random() > 0.5
+}));
+function Confetti() {
+  return /* @__PURE__ */ React.createElement("div", { style: { position: "fixed", inset: 0, zIndex: 40, overflow: "hidden", pointerEvents: "none" } }, CONFETTI.map((c, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: {
+    position: "absolute",
+    left: `${c.left}%`,
+    top: "-20px",
+    width: c.size,
+    height: c.size * (c.round ? 1 : 1.6),
+    background: c.color,
+    borderRadius: c.round ? "50%" : 2,
+    animation: `ca-confetti ${c.dur}s cubic-bezier(.4,.1,.6,.9) ${c.delay}s forwards`,
+    transform: `rotate(${c.rot}deg)`
+  } })));
+}
+function Mascot({ mood = "wave", size = 120 }) {
+  const cheer = mood === "cheer";
+  return /* @__PURE__ */ React.createElement("div", { style: { width: size, height: size * 1.15, margin: "0 auto", position: "relative", animation: cheer ? "ca-bob 0.9s ease-in-out infinite" : "ca-bob 3s ease-in-out infinite" } }, /* @__PURE__ */ React.createElement("svg", { viewBox: "0 0 120 138", width: size, height: size * 1.15 }, /* @__PURE__ */ React.createElement(
+    "rect",
+    {
+      x: "14",
+      y: "10",
+      width: "92",
+      height: "118",
+      rx: "14",
+      fill: "url(#caMascotGrad)",
+      stroke: "#F1EDF7",
+      strokeWidth: "3"
+    }
+  ), /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("linearGradient", { id: "caMascotGrad", x1: "0", y1: "0", x2: "1", y2: "1" }, /* @__PURE__ */ React.createElement("stop", { offset: "0%", stopColor: "var(--ca-accent)" }), /* @__PURE__ */ React.createElement("stop", { offset: "100%", stopColor: "#2FA85A" }))), /* @__PURE__ */ React.createElement("g", { style: {
+    transformOrigin: "26px 60px",
+    transform: cheer ? "rotate(-70deg)" : void 0,
+    animation: !cheer && mood === "wave" ? "ca-wave 1.6s ease-in-out infinite" : "none"
+  } }, /* @__PURE__ */ React.createElement("rect", { x: "2", y: "54", width: "26", height: "10", rx: "5", fill: "#F1EDF7" }), /* @__PURE__ */ React.createElement("circle", { cx: "4", cy: "59", r: "9", fill: "#F1EDF7" })), /* @__PURE__ */ React.createElement("g", { style: { transformOrigin: "94px 75px", transform: cheer ? "rotate(70deg)" : void 0 } }, /* @__PURE__ */ React.createElement("rect", { x: "92", y: "70", width: "26", height: "10", rx: "5", fill: "#F1EDF7" }), /* @__PURE__ */ React.createElement("circle", { cx: "116", cy: "75", r: "9", fill: "#F1EDF7" })), /* @__PURE__ */ React.createElement("g", { style: { animation: "ca-blink 4s ease-in-out infinite" } }, /* @__PURE__ */ React.createElement("circle", { cx: "44", cy: "58", r: "9", fill: "#F1EDF7" }), /* @__PURE__ */ React.createElement("circle", { cx: "76", cy: "58", r: "9", fill: "#F1EDF7" }), /* @__PURE__ */ React.createElement("circle", { cx: "46", cy: "59", r: "4", fill: "#170B26" }), /* @__PURE__ */ React.createElement("circle", { cx: "78", cy: "59", r: "4", fill: "#170B26" })), /* @__PURE__ */ React.createElement("path", { d: "M42 80 Q60 96 78 80", stroke: "#F1EDF7", strokeWidth: "4", fill: "none", strokeLinecap: "round" }), /* @__PURE__ */ React.createElement("circle", { cx: "36", cy: "72", r: "5", fill: "#F1EDF7", opacity: "0.35" }), /* @__PURE__ */ React.createElement("circle", { cx: "84", cy: "72", r: "5", fill: "#F1EDF7", opacity: "0.35" }), /* @__PURE__ */ React.createElement("text", { x: "60", y: "26", fontSize: "14", textAnchor: "middle", fill: "#F1EDF7" }, "\u2605")));
+}
+function CardFace({ card, small, faceDown, className, style }) {
+  const w = small ? 42 : 68;
+  const h = small ? 60 : 96;
+  if (faceDown) {
+    return /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        className,
+        style: {
+          width: w,
+          height: h,
+          borderRadius: 9,
+          position: "relative",
+          flexShrink: 0,
+          background: "linear-gradient(155deg, #2A1642 0%, #0D0812 100%)",
+          border: "2px solid #4a3a63",
+          boxShadow: "0 3px 6px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.04)",
+          overflow: "hidden",
+          ...style
+        }
+      },
+      /* @__PURE__ */ React.createElement("div", { style: {
+        position: "absolute",
+        inset: 5,
+        borderRadius: 5,
+        border: "1.5px solid rgba(var(--ca-accent-rgb),.5)",
+        backgroundImage: "repeating-linear-gradient(45deg, rgba(var(--ca-accent-rgb),.12) 0 2px, transparent 2px 9px),repeating-linear-gradient(-45deg, rgba(47,168,90,.10) 0 2px, transparent 2px 9px)"
+      } }),
+      /* @__PURE__ */ React.createElement("div", { style: {
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "var(--ca-accent)",
+        fontWeight: 800,
+        fontSize: small ? 13 : 18,
+        fontFamily: "'Cairo', sans-serif",
+        textShadow: "0 1px 2px rgba(0,0,0,.5)"
+      } }, "\u2605")
+    );
+  }
+  const bg = COLOR_HEX[card.color];
+  let symbol = card.value;
+  let corner = card.value;
+  if (card.type === "skip") {
+    symbol = "\u29B8";
+    corner = "\u29B8";
+  } else if (card.type === "reverse") {
+    symbol = "\u21C4";
+    corner = "\u21C4";
+  } else if (card.type === "draw2") {
+    symbol = "+2";
+    corner = "+2";
+  } else if (card.type === "wild") {
+    symbol = "\u2605";
+    corner = "\u2605";
+  } else if (card.type === "wild4") {
+    symbol = "+4";
+    corner = "+4";
+  }
+  const isWild = card.color === "wild";
+  return /* @__PURE__ */ React.createElement(
+    "div",
+    {
+      className,
+      style: {
+        width: w,
+        height: h,
+        borderRadius: 9,
+        position: "relative",
+        flexShrink: 0,
+        background: isWild ? "conic-gradient(from 90deg, #B8332F, #D97B4F, #2D6A4F, #2A5C8A, #B8332F)" : `linear-gradient(155deg, ${bg} 0%, ${bg} 55%, rgba(0,0,0,.18) 100%)`,
+        border: "2px solid rgba(241,237,247,.92)",
+        boxShadow: "0 3px 7px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.15)",
+        overflow: "hidden",
+        ...style
+      }
+    },
+    /* @__PURE__ */ React.createElement("div", { style: {
+      position: "absolute",
+      top: -h * 0.6,
+      left: -w * 0.3,
+      width: w * 1.6,
+      height: h,
+      background: "linear-gradient(120deg, rgba(255,255,255,.22), transparent 55%)",
+      transform: "rotate(12deg)",
+      pointerEvents: "none"
+    } }),
+    !isWild && /* @__PURE__ */ React.createElement("div", { style: {
+      position: "absolute",
+      inset: small ? 5 : 7,
+      borderRadius: "50%",
+      background: "rgba(0,0,0,.14)",
+      transform: "scaleX(.72)"
+    } }),
+    !small && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", top: 4, left: 6, fontSize: 11, fontWeight: 800, color: "#F1EDF7", textShadow: "0 1px 1px rgba(0,0,0,.5)" } }, corner), /* @__PURE__ */ React.createElement("div", { style: { position: "absolute", bottom: 4, right: 6, fontSize: 11, fontWeight: 800, color: "#F1EDF7", transform: "rotate(180deg)", textShadow: "0 1px 1px rgba(0,0,0,.5)" } }, corner)),
+    /* @__PURE__ */ React.createElement("div", { style: {
+      position: "absolute",
+      inset: 0,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "#F1EDF7",
+      fontWeight: 800,
+      fontSize: small ? 16 : 26,
+      fontFamily: "'Cairo', sans-serif",
+      fontStyle: card.type === "number" ? "italic" : "normal",
+      textShadow: "0 1px 3px rgba(0,0,0,.45)"
+    } }, symbol)
+  );
+}
+const CHESS_GLYPHS = {
+  wK: "\u2654",
+  wQ: "\u2655",
+  wR: "\u2656",
+  wB: "\u2657",
+  wN: "\u2658",
+  wP: "\u2659",
+  bK: "\u265A",
+  bQ: "\u265B",
+  bR: "\u265C",
+  bB: "\u265D",
+  bN: "\u265E",
+  bP: "\u265F"
+};
+function ChessGame(props) {
+  const { room, game, playerId, name, profile, t, sfx, commitGame, leaveTable, playAgain, Avatar: Avatar2, nameColorHex: nameColorHex2, coinPop, pageStyle, GlobalStyle, LangSwitcher, SoundToggle, cardPanel, btnPrimary, btnGhost } = props;
+  const [selected, setSelected] = useState(null);
+  const myColor = game.colorOf[playerId];
+  const opponent = room.players.find((p) => p.id !== playerId);
+  const myTurn = !game.winnerId && game.turn === myColor;
+  const legalTargets = selected !== null ? legalMovesFrom(game, selected) : [];
+  function playMove(move) {
+    let next = chessMakeMove(game, move);
+    if (next.winnerId && next.winnerId.startsWith("COLOR:")) {
+      const col = next.winnerId.slice(6);
+      const winPid = Object.keys(next.colorOf).find((id) => next.colorOf[id] === col);
+      next = { ...next, winnerId: winPid };
+    }
+    commitGame(next);
+    setSelected(null);
+  }
+  function squareClick(i) {
+    if (!myTurn) return;
+    const piece = game.board[i];
+    if (selected === null) {
+      if (piece && piece[0] === myColor) {
+        setSelected(i);
+        sfx("open");
+      }
+      return;
+    }
+    const move = legalTargets.find((m) => m.to === i);
+    if (move) {
+      sfx("play");
+      playMove(move);
+    } else if (piece && piece[0] === myColor) {
+      setSelected(i);
+      sfx("open");
+    } else {
+      setSelected(null);
+    }
+  }
+  function autoMove() {
+    if (!myTurn) return;
+    const moves = allLegalMoves(game, myColor);
+    if (!moves.length) return;
+    sfx("invalid");
+    playMove(moves[Math.floor(Math.random() * moves.length)]);
+  }
+  if (game.winnerId) {
+    const isDraw = game.winnerId === "draw";
+    const isMe = game.winnerId === playerId;
+    const winnerName = isDraw ? null : isMe ? name : opponent?.name;
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), !isDraw && /* @__PURE__ */ React.createElement(Confetti, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 420, margin: "14vh auto 0", textAlign: "center", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement(Mascot, { mood: isDraw ? "wave" : isMe ? "cheer" : "wave", size: 100 }), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: 24, fontWeight: 800, margin: "6px 0 6px" } }, isDraw ? t("stalemate") : `${winnerName} \u2014 ${t("checkmate")}`), coinPop !== null && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 15, fontWeight: 800, color: "#F0C24B", animation: "ca-coin-pop 1.4s ease forwards" } }, /* @__PURE__ */ React.createElement(CoinIcon, { size: 16 }), " +", coinPop), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10, justifyContent: "center", marginTop: 20 } }, room.hostId === playerId && /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: btnPrimary, onClick: playAgain }, t("playAgain")), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: btnGhost, onClick: leaveTable }, t("backToLobby")))));
+  }
+  const boardRows = [];
+  for (let r = 7; r >= 0; r--) boardRows.push(r);
+  const flip = myColor === "b";
+  const displayRows = flip ? [...boardRows].reverse() : boardRows;
+  return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 460, margin: "0 auto", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, opacity: 0.75 } }, t("tableCode"), ": ", /* @__PURE__ */ React.createElement("b", { style: { letterSpacing: 2 } }, room.code)), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, padding: "6px 12px", fontSize: 12 }, onClick: leaveTable }, t("leaveTable"))), opponent && /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 8 } }, /* @__PURE__ */ React.createElement(Avatar2, { pfp: opponent.pfp || "joker", effect: opponent.effect || "none", size: 30 }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 700, color: nameColorHex2(opponent.nameColor || "ivory") } }, opponent.name)), /* @__PURE__ */ React.createElement("div", { style: {
+    display: "grid",
+    gridTemplateColumns: "repeat(8, 1fr)",
+    width: "100%",
+    aspectRatio: "1",
+    borderRadius: 10,
+    overflow: "hidden",
+    border: "3px solid rgba(241,237,247,.2)",
+    boxShadow: "0 8px 24px rgba(0,0,0,.4)"
+  } }, displayRows.map((r) => {
+    const cols = flip ? [7, 6, 5, 4, 3, 2, 1, 0] : [0, 1, 2, 3, 4, 5, 6, 7];
+    return cols.map((c) => {
+      const i = sq(r, c);
+      const dark = (r + c) % 2 === 0;
+      const piece = game.board[i];
+      const isSel = selected === i;
+      const isTarget = legalTargets.some((m) => m.to === i);
+      const isLast = game.lastMove && (game.lastMove.from === i || game.lastMove.to === i);
+      return /* @__PURE__ */ React.createElement(
+        "div",
+        {
+          key: i,
+          onClick: () => squareClick(i),
+          style: {
+            position: "relative",
+            aspectRatio: "1",
+            background: isSel ? "#2FA85A" : isLast ? "rgba(var(--ca-accent-rgb),.35)" : dark ? "#2A1642" : "#4A3568",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "min(7vw, 32px)",
+            cursor: myTurn ? "pointer" : "default"
+          }
+        },
+        piece && /* @__PURE__ */ React.createElement("span", { style: { textShadow: "0 2px 3px rgba(0,0,0,.5)" } }, CHESS_GLYPHS[piece]),
+        isTarget && /* @__PURE__ */ React.createElement("div", { style: {
+          position: "absolute",
+          width: piece ? "88%" : "32%",
+          height: piece ? "88%" : "32%",
+          borderRadius: piece ? 6 : "50%",
+          border: piece ? "3px solid rgba(193,85,74,.75)" : "none",
+          background: piece ? "transparent" : "rgba(241,237,247,.55)"
+        } })
+      );
+    });
+  })), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginTop: 14 } }, myTurn ? /* @__PURE__ */ React.createElement("div", { style: { fontSize: 16, fontWeight: 800, color: "#2FA85A" } }, t("yourTurn"), game.inCheck ? ` \xB7 ${t("check")}` : "") : /* @__PURE__ */ React.createElement("div", { style: { fontSize: 14, opacity: 0.75 } }, opponent?.name, " \u2014 ", t("turnOf"), game.inCheck ? ` \xB7 ${t("check")}` : ""), /* @__PURE__ */ React.createElement(TurnTimer, { active: myTurn, seconds: 45, onExpire: autoMove })), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 8, marginTop: 14 } }, /* @__PURE__ */ React.createElement(Avatar2, { pfp: profile.pfp, effect: profile.effect, size: 30 }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 700, color: nameColorHex2(profile.nameColor) } }, name))));
+}
+const SUIT_GLYPH = { s: "\u2660", h: "\u2665", d: "\u2666", c: "\u2663" };
+function PokerCardMini({ card, hidden }) {
+  if (hidden) {
+    return /* @__PURE__ */ React.createElement("div", { style: { width: 34, height: 48, borderRadius: 6, background: "linear-gradient(155deg,#2A1642,#0D0812)", border: "1.5px solid #4a3a63" } });
+  }
+  const suit = card[1];
+  const red = suit === "h" || suit === "d";
+  return /* @__PURE__ */ React.createElement("div", { style: {
+    width: 34,
+    height: 48,
+    borderRadius: 6,
+    background: "#F1EDF7",
+    border: "1.5px solid rgba(0,0,0,.2)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    color: red ? "#A6453D" : "#1A1420",
+    fontWeight: 800,
+    fontSize: 14,
+    lineHeight: 1.1
+  } }, /* @__PURE__ */ React.createElement("div", null, card[0]), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 15 } }, SUIT_GLYPH[suit]));
+}
+function PokerGame(props) {
+  const { room, game, playerId, order, name, profile, t, sfx, commitGame, leaveTable, Avatar: Avatar2, nameColorHex: nameColorHex2, pageStyle, GlobalStyle, LangSwitcher, SoundToggle, cardPanel, btnPrimary, btnGhost, input } = props;
+  const [raiseAmt, setRaiseAmt] = useState(20);
+  const myIdx = order.indexOf(playerId);
+  const toActId = order[game.toActIndex];
+  const myTurn = game.round !== "showdown" && toActId === playerId && !game.folded[playerId];
+  const myHole = game.hole[playerId] || [];
+  const iFolded = game.folded[playerId];
+  const canCheck = (game.bets[playerId] || 0) === game.currentBet;
+  const callAmount = game.currentBet - (game.bets[playerId] || 0);
+  function act(action, amount) {
+    sfx(action === "fold" ? "invalid" : action === "raise" ? "uno" : "click");
+    const next = pokerAdvance(game, order, action, amount);
+    commitGame(next);
+  }
+  function nextHand() {
+    sfx("draw");
+    const next = pokerStartHand(game, order);
+    commitGame(next);
+  }
+  const isShowdown = game.round === "showdown";
+  return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 640, margin: "0 auto", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, opacity: 0.75 } }, t("tableCode"), ": ", /* @__PURE__ */ React.createElement("b", { style: { letterSpacing: 2 } }, room.code)), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, padding: "6px 12px", fontSize: 12 }, onClick: leaveTable }, t("leaveTable"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center", marginBottom: 16 } }, order.filter((id) => id !== playerId).map((id) => {
+    const p = room.players.find((pp) => pp.id === id);
+    if (!p) return null;
+    const isTurn = toActId === id && !isShowdown;
+    const folded = game.folded[id];
+    const showCards = isShowdown && game.showHole && game.showHole.includes(id);
+    return /* @__PURE__ */ React.createElement("div", { key: id, className: "ca-panel", style: {
+      ...cardPanel,
+      padding: "8px 10px",
+      textAlign: "center",
+      minWidth: 80,
+      opacity: folded ? 0.45 : 1,
+      border: isTurn ? "1px solid #2FA85A" : cardPanel.border
+    } }, /* @__PURE__ */ React.createElement(Avatar2, { pfp: p.pfp || "joker", effect: p.effect || "none", size: 28 }), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, fontWeight: 700, color: nameColorHex2(p.nameColor || "ivory"), marginTop: 4 } }, p.name), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 10, opacity: 0.75 } }, t("stack"), ": ", game.stacks[id]), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 3, justifyContent: "center", marginTop: 4 } }, (game.hole[id] || []).map((c, i) => /* @__PURE__ */ React.createElement("div", { key: i, style: { transform: "scale(.6)", transformOrigin: "center" } }, /* @__PURE__ */ React.createElement(PokerCardMini, { card: c, hidden: !showCards })))), folded && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 9, opacity: 0.7, marginTop: 2 } }, t("folded")), game.bets[id] > 0 && !folded && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 10, color: "#F0C24B", marginTop: 2 } }, /* @__PURE__ */ React.createElement(CoinIcon, { size: 11 }), " ", game.bets[id]));
+  })), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginBottom: 8 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, opacity: 0.7, marginBottom: 6 } }, t("pot"), ": ", /* @__PURE__ */ React.createElement(CoinIcon, { size: 12 }), " ", game.pot), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, justifyContent: "center", minHeight: 48 } }, game.community.map((c, i) => /* @__PURE__ */ React.createElement(PokerCardMini, { key: i, card: c })), Array.from({ length: 5 - game.community.length }).map((_, i) => /* @__PURE__ */ React.createElement("div", { key: "e" + i, style: { width: 34, height: 48, borderRadius: 6, border: "1.5px dashed rgba(241,237,247,.2)" } })))), isShowdown && /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", margin: "10px 0", animation: "ca-fade-up .3s ease" } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 15, fontWeight: 800, color: "#F0C24B" } }, game.handWinnerIds?.map((id) => room.players.find((p) => p.id === id)?.name).join(", "), " \u2014 ", game.handWinnerDesc), room.hostId === playerId && /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: { ...btnPrimary, marginTop: 10 }, onClick: nextHand }, t("nextHand"))), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, padding: "14px 16px", marginTop: 10 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement(Avatar2, { pfp: profile.pfp, effect: profile.effect, size: 30 }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 700, color: nameColorHex2(profile.nameColor) } }, name)), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, opacity: 0.8 } }, t("stack"), ": ", /* @__PURE__ */ React.createElement(CoinIcon, { size: 12 }), " ", game.stacks[playerId])), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 6, justifyContent: "center", marginBottom: 12 } }, myHole.map((c, i) => /* @__PURE__ */ React.createElement(PokerCardMini, { key: i, card: c, hidden: iFolded && !isShowdown }))), myTurn && !iFolded && /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" } }, /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: btnGhost, onClick: () => act("fold") }, t("fold")), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: btnPrimary, onClick: () => act(canCheck ? "check" : "call") }, canCheck ? t("check2") : /* @__PURE__ */ React.createElement(React.Fragment, null, t("call"), " ", /* @__PURE__ */ React.createElement(CoinIcon, { size: 12 }), callAmount)), /* @__PURE__ */ React.createElement(
+    "input",
+    {
+      type: "number",
+      min: 10,
+      max: game.stacks[playerId],
+      value: raiseAmt,
+      onChange: (e) => setRaiseAmt(Number(e.target.value)),
+      style: { ...input, width: 70, textAlign: "center" }
+    }
+  ), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: btnPrimary, onClick: () => act("raise", raiseAmt) }, t("raise"))), /* @__PURE__ */ React.createElement(TurnTimer, { active: myTurn && !iFolded, seconds: 25, onExpire: () => act(canCheck ? "check" : "fold") }), !myTurn && !isShowdown && /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", fontSize: 13, opacity: 0.7 } }, iFolded ? t("folded") : `${room.players.find((p) => p.id === toActId)?.name} \u2014 ${t("turnOf")}`))));
+}
+const BALL_COLORS = {
+  0: "#F1EDF7",
+  1: "#F0C24B",
+  2: "#2A5C8A",
+  3: "#A6453D",
+  4: "#8B5CF6",
+  5: "#E2703A",
+  6: "#2FA85A",
+  7: "#7A1F1F",
+  8: "#170B26",
+  9: "#F0C24B",
+  10: "#2A5C8A",
+  11: "#A6453D",
+  12: "#8B5CF6",
+  13: "#E2703A",
+  14: "#2FA85A",
+  15: "#7A1F1F"
+};
+function PoolGame(props) {
+  const { room, game, playerId, order, name, profile, t, sfx, commitGame, leaveTable, playAgain, Avatar: Avatar2, nameColorHex: nameColorHex2, coinPop, pageStyle, GlobalStyle, LangSwitcher, SoundToggle, cardPanel, btnPrimary, btnGhost } = props;
+  const canvasRef = useRef(null);
+  const [aim, setAim] = useState(null);
+  const [liveBalls, setLiveBalls] = useState(null);
+  const dragging = useRef(false);
+  const myIdx = order.indexOf(playerId);
+  const myTurn = !game.winnerId && !game.shotInProgress && game.turnIndex === myIdx;
+  const opponent = room.players.find((p) => p.id !== playerId);
+  const balls = liveBalls || game.balls;
+  const cue = balls.find((b) => b.type === "cue" && b.active);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, POOL_W, POOL_H);
+    ctx.fillStyle = "#1B5E3A";
+    ctx.fillRect(0, 0, POOL_W, POOL_H);
+    ctx.strokeStyle = "rgba(0,0,0,.3)";
+    ctx.lineWidth = 14;
+    ctx.strokeRect(0, 0, POOL_W, POOL_H);
+    for (const p of POOL_POCKETS) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 15, 0, Math.PI * 2);
+      ctx.fillStyle = "#0D0812";
+      ctx.fill();
+    }
+    for (const b of balls) {
+      if (!b.active) continue;
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, BALL_R, 0, Math.PI * 2);
+      ctx.fillStyle = BALL_COLORS[b.num] ?? "#fff";
+      ctx.fill();
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = "rgba(0,0,0,.35)";
+      ctx.stroke();
+      if (b.num >= 9) {
+        ctx.beginPath();
+        ctx.arc(b.x, b.y, BALL_R * 0.55, 0, Math.PI * 2);
+        ctx.fillStyle = "#F1EDF7";
+        ctx.fill();
+      }
+      if (b.num > 0) {
+        ctx.fillStyle = b.num >= 9 ? BALL_COLORS[b.num] : "#F1EDF7";
+        ctx.font = "8px sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(String(b.num), b.x, b.y);
+      }
+    }
+    if (aim && cue && myTurn && !game.shotInProgress) {
+      ctx.beginPath();
+      ctx.moveTo(cue.x, cue.y);
+      const dx = cue.x - aim.x, dy = cue.y - aim.y;
+      const len = Math.sqrt(dx * dx + dy * dy);
+      const nx = len ? dx / len : 0, ny = len ? dy / len : 0;
+      ctx.lineTo(cue.x + nx * 40, cue.y + ny * 40);
+      ctx.strokeStyle = "#C1554A";
+      ctx.lineWidth = 3;
+      ctx.stroke();
+    }
+  }, [balls, aim, cue, myTurn, game.shotInProgress]);
+  function pointerPos(e) {
+    const rect = canvasRef.current.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: (clientX - rect.left) / rect.width * POOL_W, y: (clientY - rect.top) / rect.height * POOL_H };
+  }
+  function onDown(e) {
+    if (!myTurn || game.shotInProgress) return;
+    if (game.ballInHand) {
+      const pos = pointerPos(e);
+      const next = JSON.parse(JSON.stringify(game));
+      const cb = next.balls.find((b) => b.type === "cue");
+      cb.x = Math.max(BALL_R + 20, Math.min(POOL_W - BALL_R - 20, pos.x));
+      cb.y = Math.max(BALL_R + 20, Math.min(POOL_H - BALL_R - 20, pos.y));
+      cb.active = true;
+      next.ballInHand = false;
+      sfx("click");
+      commitGame(next);
+      return;
+    }
+    dragging.current = true;
+    setAim(pointerPos(e));
+  }
+  function onMove(e) {
+    if (!dragging.current) return;
+    setAim(pointerPos(e));
+  }
+  function onUp() {
+    if (!dragging.current || !aim || !cue) {
+      dragging.current = false;
+      setAim(null);
+      return;
+    }
+    dragging.current = false;
+    const dx = cue.x - aim.x, dy = cue.y - aim.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    setAim(null);
+    if (dist < 6) return;
+    const angle = Math.atan2(dy, dx);
+    const power = Math.min(dist / 8, 9);
+    sfx("draw");
+    runShot(angle, power);
+  }
+  function runShot(angle, power) {
+    const { frames, finalBalls, pocketed, firstHit } = poolSimulate(game.balls, angle, power);
+    let frameIdx = 0;
+    const playFrame = () => {
+      if (frameIdx >= frames.length) {
+        finishShot(finalBalls, pocketed, firstHit);
+        return;
+      }
+      setLiveBalls(frames[frameIdx]);
+      frameIdx++;
+      requestAnimationFrame(() => setTimeout(playFrame, 16));
+    };
+    const next = { ...game, shotInProgress: true };
+    commitGame(next);
+    playFrame();
+  }
+  function autoShot() {
+    if (!myTurn || game.shotInProgress || game.ballInHand) return;
+    sfx("invalid");
+    runShot(Math.random() * Math.PI * 2, 3.5);
+  }
+  function finishShot(finalBalls, pocketed, firstHit) {
+    setLiveBalls(null);
+    const next = JSON.parse(JSON.stringify(game));
+    next.shotInProgress = false;
+    const cueBall = finalBalls.find((b) => b.type === "cue");
+    const scratched = !cueBall.active;
+    next.balls = finalBalls.map((b) => b.type === "cue" && scratched ? { ...b, active: true, x: POOL_W * 0.25, y: POOL_H / 2, vx: 0, vy: 0 } : b);
+    const myAssigned = next.assigned[playerId];
+    let legalPocket = pocketed.filter((n) => n !== 0);
+    const pocketedEight = legalPocket.includes(8);
+    let foul = scratched || firstHit === null;
+    if (!next.assigned[playerId] && !next.assigned[opponent?.id] && legalPocket.length) {
+      const firstType = legalPocket.find((n) => n !== 8);
+      if (firstType !== void 0) {
+        const type = firstType < 8 ? "solid" : "stripe";
+        next.assigned[playerId] = type;
+        next.assigned[opponent?.id] = type === "solid" ? "stripe" : "solid";
+      }
+    }
+    if (next.assigned[playerId] && firstHit) {
+      const hitType = firstHit < 8 ? "solid" : firstHit === 8 ? "eight" : "stripe";
+      const myGroupCleared = next.balls.filter((b) => b.active && (next.assigned[playerId] === "solid" && b.num > 0 && b.num < 8 || next.assigned[playerId] === "stripe" && b.num > 8)).length === 0;
+      if (hitType !== next.assigned[playerId] && !(hitType === "eight" && myGroupCleared)) foul = true;
+    }
+    if (pocketedEight) {
+      const myGroupCleared = next.assigned[playerId] && next.balls.filter((b) => b.active && (next.assigned[playerId] === "solid" && b.num > 0 && b.num < 8 || next.assigned[playerId] === "stripe" && b.num > 8)).length === 0;
+      if (myGroupCleared && !scratched) {
+        next.winnerId = playerId;
+      } else {
+        next.winnerId = opponent?.id;
+      }
+      commitGame(next);
+      return;
+    }
+    const sunkOwn = next.assigned[playerId] && legalPocket.some((n) => (next.assigned[playerId] === "solid" ? n < 8 : n > 8) && n !== 0);
+    if (foul) {
+      next.ballInHand = true;
+      next.turnIndex = order.indexOf(opponent?.id);
+    } else if (!sunkOwn) {
+      next.turnIndex = order.indexOf(opponent?.id);
+    }
+    next.lastPocketed = pocketed;
+    commitGame(next);
+  }
+  if (game.winnerId) {
+    const isMe = game.winnerId === playerId;
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(Confetti, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 420, margin: "14vh auto 0", textAlign: "center", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement(Mascot, { mood: "cheer", size: 100 }), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: 24, fontWeight: 800, margin: "6px 0 6px" } }, isMe ? name : opponent?.name, " ", t("wins")), coinPop !== null && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 15, fontWeight: 800, color: "#F0C24B", animation: "ca-coin-pop 1.4s ease forwards" } }, /* @__PURE__ */ React.createElement(CoinIcon, { size: 16 }), " +", coinPop), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10, justifyContent: "center", marginTop: 20 } }, room.hostId === playerId && /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: btnPrimary, onClick: playAgain }, t("playAgain")), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: btnGhost, onClick: leaveTable }, t("backToLobby")))));
+  }
+  return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 800, margin: "0 auto", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, opacity: 0.75 } }, t("tableCode"), ": ", /* @__PURE__ */ React.createElement("b", { style: { letterSpacing: 2 } }, room.code)), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, padding: "6px 12px", fontSize: 12 }, onClick: leaveTable }, t("leaveTable"))), opponent && /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 8, marginBottom: 8 } }, /* @__PURE__ */ React.createElement(Avatar2, { pfp: opponent.pfp || "joker", effect: opponent.effect || "none", size: 28 }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 700, color: nameColorHex2(opponent.nameColor || "ivory") } }, opponent.name), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, opacity: 0.7 } }, game.assigned[opponent.id] ? `\xB7 ${t(game.assigned[opponent.id] === "solid" ? "solids" : "stripes")}` : "")), /* @__PURE__ */ React.createElement(
+    "canvas",
+    {
+      ref: canvasRef,
+      width: POOL_W,
+      height: POOL_H,
+      style: { width: "100%", maxWidth: POOL_W, height: "auto", borderRadius: 8, cursor: myTurn ? "crosshair" : "default", touchAction: "none", display: "block", margin: "0 auto" },
+      onMouseDown: onDown,
+      onMouseMove: onMove,
+      onMouseUp: onUp,
+      onMouseLeave: () => {
+        dragging.current = false;
+        setAim(null);
+      },
+      onTouchStart: onDown,
+      onTouchMove: onMove,
+      onTouchEnd: onUp
+    }
+  ), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginTop: 10 } }, game.ballInHand && myTurn ? /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, color: "#F0C24B" } }, t("ballInHand")) : myTurn ? /* @__PURE__ */ React.createElement("div", { style: { fontSize: 16, fontWeight: 800, color: "#2FA85A" } }, t("yourTurn")) : game.shotInProgress ? /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, opacity: 0.7 } }, "\u2026") : /* @__PURE__ */ React.createElement("div", { style: { fontSize: 14, opacity: 0.75 } }, opponent?.name, " \u2014 ", t("turnOf")), /* @__PURE__ */ React.createElement(TurnTimer, { active: myTurn && !game.shotInProgress && !game.ballInHand, seconds: 30, onExpire: autoShot }), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.55, marginTop: 4 } }, t("aimShoot"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", gap: 8, marginTop: 14, justifyContent: "center" } }, /* @__PURE__ */ React.createElement(Avatar2, { pfp: profile.pfp, effect: profile.effect, size: 28 }), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13, fontWeight: 700, color: nameColorHex2(profile.nameColor) } }, name), /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, opacity: 0.7 } }, game.assigned[playerId] ? `\xB7 ${t(game.assigned[playerId] === "solid" ? "solids" : "stripes")}` : ""))));
+}
+function CardArena() {
+  const [lang, setLang] = useState("en");
+  const t = useCallback((key) => STR[key] && STR[key][lang] || STR[key]?.en || key, [lang]);
+  const dir = LANGS[lang].dir;
+  const [name, setName] = useState("");
+  const [stage, setStage] = useState("landing");
+  const [playerId] = useState(() => randomId());
+  const [avatarColor] = useState(() => AVATAR_COLORS[Math.floor(Math.random() * AVATAR_COLORS.length)]);
+  const [profile, setProfile] = useState(() => defaultProfile(""));
+  const [profileLoaded, setProfileLoaded] = useState(false);
+  const [shopTab, setShopTab] = useState("pfp");
+  const [prevStageBeforeShop, setPrevStageBeforeShop] = useState("menu");
+  const [coinPop, setCoinPop] = useState(null);
+  const [joinCodeInput, setJoinCodeInput] = useState("");
+  const [maxPlayers, setMaxPlayers] = useState(4);
+  const [selectedGame, setSelectedGame] = useState("uno");
+  const [room, setRoom] = useState(null);
+  const [error, setError] = useState("");
+  const pollRef = useRef(null);
+  const codeRef = useRef(null);
+  const [copiedFlash, setCopiedFlash] = useState(null);
+  const [pendingWildCard, setPendingWildCard] = useState(null);
+  const [unoFlash, setUnoFlash] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [topAnimKey, setTopAnimKey] = useState(0);
+  const [dealt, setDealt] = useState(false);
+  const [soundOn, setSoundOn] = useState(true);
+  const [shakeCardId, setShakeCardId] = useState(null);
+  const sfx = useCallback(makeSfx(soundOn), [soundOn]);
+  const prevTopId = useRef(null);
+  const prevStage = useRef(stage);
+  const prevMyTurn = useRef(false);
+  const prevWinner = useRef(null);
+  const stopPolling = () => {
+    if (pollRef.current) pollRef.current();
+    pollRef.current = null;
+  };
+  const startPolling = (code) => {
+    stopPolling();
+    codeRef.current = code;
+    pollRef.current = subscribeRoom(code, (r) => {
+      if (r) setRoom(r);
+    });
+  };
+  useEffect(() => stopPolling, []);
+  useEffect(() => {
+    try {
+      console.log(
+        "%cCardo \u2014 built by Yusef. Yusef rights, Lucifer rights. All rights reserved.",
+        "color:#9B5DE5;font-weight:bold;"
+      );
+    } catch (e) {
+    }
+  }, []);
+  useEffect(() => {
+    (async () => {
+      const p = await loadProfile();
+      if (p) {
+        setProfile(p);
+        setName(p.name || "");
+      }
+      setProfileLoaded(true);
+    })();
+  }, []);
+  function updateProfile(patchOrFn) {
+    setProfile((prev) => {
+      const patch = typeof patchOrFn === "function" ? patchOrFn(prev) : patchOrFn;
+      const next = { ...prev, ...patch };
+      saveProfile(next);
+      return next;
+    });
+  }
+  function selectFreePfp(id) {
+    sfx("click");
+    updateProfile({ pfp: id });
+  }
+  function buyOrEquipPfp(id, cost) {
+    const owned = profile.ownedPfps.includes(id);
+    if (!owned && profile.coins < cost) {
+      sfx("invalid");
+      return;
+    }
+    sfx(owned ? "click" : "uno");
+    updateProfile(
+      (prev) => prev.ownedPfps.includes(id) ? { pfp: id } : { coins: prev.coins - cost, ownedPfps: [...prev.ownedPfps, id], pfp: id }
+    );
+  }
+  function buyOrEquipColor(id, cost) {
+    const owned = profile.ownedColors.includes(id);
+    if (!owned && profile.coins < cost) {
+      sfx("invalid");
+      return;
+    }
+    sfx(owned ? "click" : "uno");
+    updateProfile(
+      (prev) => prev.ownedColors.includes(id) ? { nameColor: id } : { coins: prev.coins - cost, ownedColors: [...prev.ownedColors, id], nameColor: id }
+    );
+  }
+  function buyOrEquipEffect(id, cost) {
+    const owned = profile.ownedEffects.includes(id);
+    if (!owned && profile.coins < cost) {
+      sfx("invalid");
+      return;
+    }
+    sfx(owned ? "click" : "uno");
+    updateProfile(
+      (prev) => prev.ownedEffects.includes(id) ? { effect: id } : { coins: prev.coins - cost, ownedEffects: [...prev.ownedEffects, id], effect: id }
+    );
+  }
+  function buyOrEquipTheme(id, cost) {
+    const owned = profile.ownedThemes.includes(id);
+    if (!owned && profile.coins < cost) {
+      sfx("invalid");
+      return;
+    }
+    sfx(owned ? "click" : "uno");
+    updateProfile(
+      (prev) => prev.ownedThemes.includes(id) ? { theme: id } : { coins: prev.coins - cost, ownedThemes: [...prev.ownedThemes, id], theme: id }
+    );
+  }
+  useEffect(() => {
+    if (stage === "game" && prevStage.current !== "game") {
+      setDealt(false);
+      const timer = setTimeout(() => setDealt(true), 40);
+      return () => clearTimeout(timer);
+    }
+    prevStage.current = stage;
+  }, [stage]);
+  useEffect(() => {
+    const topId = room?.game?.discard?.[room.game.discard.length - 1]?.id;
+    if (topId !== void 0 && topId !== prevTopId.current) {
+      prevTopId.current = topId;
+      setTopAnimKey((k) => k + 1);
+    }
+  }, [room]);
+  useEffect(() => {
+    if (!langOpen) return;
+    const close = () => setLangOpen(false);
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
+  }, [langOpen]);
+  useEffect(() => {
+    if (myTurn && !prevMyTurn.current) sfx("turn");
+    prevMyTurn.current = !!myTurn;
+  });
+  useEffect(() => {
+    const wId = room?.game?.winnerId || null;
+    if (wId && wId !== prevWinner.current) {
+      sfx("win");
+      const isMe = wId === playerId;
+      const gain = wId === "draw" ? 20 : isMe ? 40 : 15;
+      if (profileLoaded) {
+        updateProfile((prev) => ({
+          coins: prev.coins + gain,
+          gamesPlayed: prev.gamesPlayed + 1,
+          wins: prev.wins + (isMe ? 1 : 0)
+        }));
+        setCoinPop(gain);
+        setTimeout(() => setCoinPop(null), 1400);
+      }
+    }
+    prevWinner.current = wId;
+  }, [room, sfx, profileLoaded]);
+  async function createTable() {
+    sfx("click");
+    const code = randomCode();
+    const forcedTwo = selectedGame === "chess" || selectedGame === "pool";
+    const newRoom = {
+      code,
+      status: "lobby",
+      gameType: selectedGame,
+      maxPlayers: forcedTwo ? 2 : maxPlayers,
+      hostId: playerId,
+      players: [{ id: playerId, name, color: avatarColor, pfp: profile.pfp, nameColor: profile.nameColor, effect: profile.effect }],
+      game: null,
+      updatedAt: Date.now()
+    };
+    await saveRoom(code, newRoom);
+    setRoom(newRoom);
+    setStage("lobby");
+    startPolling(code);
+  }
+  async function joinTable() {
+    sfx("click");
+    const code = joinCodeInput.trim().toUpperCase();
+    if (!code) return;
+    const r = await loadRoom(code);
+    if (!r) return setError(t("roomNotFound"));
+    if (r.players.some((p) => p.id === playerId)) {
+      setRoom(r);
+      setStage(r.status === "playing" ? "game" : "lobby");
+      startPolling(code);
+      return;
+    }
+    if (r.players.length >= r.maxPlayers) return setError(t("roomFull"));
+    r.players.push({ id: playerId, name, color: avatarColor, pfp: profile.pfp, nameColor: profile.nameColor, effect: profile.effect });
+    r.updatedAt = Date.now();
+    await saveRoom(code, r);
+    setRoom(r);
+    setStage(r.status === "playing" ? "game" : "lobby");
+    setError("");
+    startPolling(code);
+  }
+  async function startGame() {
+    if (!room || room.players.length < 2) return;
+    sfx("draw");
+    const order2 = room.players.map((p) => p.id);
+    let game2;
+    if (room.gameType === "chess") game2 = initChessGame(order2);
+    else if (room.gameType === "poker") game2 = initPokerGame(order2);
+    else if (room.gameType === "pool") game2 = initPoolGame(order2);
+    else game2 = initUnoGame(order2);
+    const updated = { ...room, status: "playing", game: game2, playerOrder: order2, updatedAt: Date.now() };
+    await saveRoom(room.code, updated);
+    setRoom(updated);
+    setStage("game");
+  }
+  async function leaveTable() {
+    sfx("click");
+    stopPolling();
+    if (room) {
+      const r = await loadRoom(room.code);
+      if (r) {
+        r.players = r.players.filter((p) => p.id !== playerId);
+        r.updatedAt = Date.now();
+        await saveRoom(room.code, r);
+      }
+    }
+    setRoom(null);
+    setStage("menu");
+  }
+  const order = room?.playerOrder || [];
+  const game = room?.game;
+  const myTurn = game && !game.winnerId && order[game.currentIndex] === playerId;
+  async function commitGame(newGame) {
+    const updated = { ...room, game: newGame, updatedAt: Date.now() };
+    await saveRoom(room.code, updated);
+    setRoom(updated);
+  }
+  async function playCard(card) {
+    if (!myTurn || !game) return;
+    const top = game.discard[game.discard.length - 1];
+    if (!canPlay(card, top, game.currentColor)) {
+      sfx("invalid");
+      setShakeCardId(card.id);
+      setTimeout(() => setShakeCardId(null), 350);
+      return;
+    }
+    sfx("play");
+    if (card.type === "wild" || card.type === "wild4") {
+      setPendingWildCard(card);
+      return;
+    }
+    resolvePlay(card, null);
+  }
+  function resolvePlay(card, chosenColor) {
+    const g = JSON.parse(JSON.stringify(game));
+    g.hands[playerId] = g.hands[playerId].filter((c) => c.id !== card.id);
+    g.discard.push(card);
+    g.currentColor = chosenColor || card.color;
+    g.unoCalled[playerId] = g.hands[playerId].length === 1 ? g.unoCalled[playerId] : false;
+    if (g.hands[playerId].length === 0) {
+      g.winnerId = playerId;
+      commitGame(g);
+      setPendingWildCard(null);
+      return;
+    }
+    if (card.type === "skip") {
+      advanceTurn(g, order, 2);
+    } else if (card.type === "reverse") {
+      g.direction *= -1;
+      advanceTurn(g, order, order.length === 2 ? 2 : 1);
+    } else if (card.type === "draw2") {
+      advanceTurn(g, order, 1);
+      const nextId = order[g.currentIndex];
+      drawCards(g, nextId, 2);
+      advanceTurn(g, order, 1);
+    } else if (card.type === "wild4") {
+      advanceTurn(g, order, 1);
+      const nextId = order[g.currentIndex];
+      drawCards(g, nextId, 4);
+      advanceTurn(g, order, 1);
+    } else {
+      advanceTurn(g, order, 1);
+    }
+    commitGame(g);
+    setPendingWildCard(null);
+  }
+  async function drawCard() {
+    if (!myTurn || !game) return;
+    sfx("draw");
+    const g = JSON.parse(JSON.stringify(game));
+    drawCards(g, playerId, 1);
+    advanceTurn(g, order, 1);
+    await commitGame(g);
+  }
+  async function callUno() {
+    if (!game) return;
+    sfx("uno");
+    const g = JSON.parse(JSON.stringify(game));
+    g.unoCalled[playerId] = true;
+    await commitGame(g);
+    setUnoFlash(true);
+    setTimeout(() => setUnoFlash(false), 900);
+  }
+  async function playAgain() {
+    sfx("click");
+    await startGame();
+  }
+  const theme = getTheme(profile.theme);
+  const pageStyle = {
+    minHeight: "100vh",
+    fontFamily: "'Cairo', sans-serif",
+    background: `radial-gradient(ellipse at top, ${theme.bgTop} 0%, ${theme.bgBottom} 70%),repeating-radial-gradient(circle at 0 0, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 26px)`,
+    color: "#F1EDF7",
+    padding: "28px 16px 60px",
+    direction: dir,
+    cursor: CURSOR_CSS,
+    position: "relative",
+    boxSizing: "border-box",
+    "--ca-accent": theme.accent,
+    "--ca-accent-dark": theme.accentDark,
+    "--ca-accent-rgb": theme.accentRgb
+  };
+  const cardPanel = {
+    background: "rgba(18, 10, 28, 0.32)",
+    border: "1px solid rgba(241,237,247,.14)",
+    borderRadius: 16,
+    padding: 24,
+    backdropFilter: "blur(6px)"
+  };
+  const btnPrimary = {
+    background: `linear-gradient(135deg, ${theme.accent} 0%, ${theme.accentDark} 100%)`,
+    color: "#1A0E2B",
+    border: "none",
+    borderRadius: 12,
+    padding: "13px 24px",
+    fontFamily: "'Cairo', sans-serif",
+    fontWeight: 800,
+    fontSize: 15,
+    cursor: "pointer",
+    letterSpacing: ".2px",
+    boxShadow: `0 4px 14px rgba(${theme.accentRgb},.35), inset 0 1px 0 rgba(255,255,255,.25)`
+  };
+  const btnGhost = {
+    background: "rgba(241,237,247,.05)",
+    color: "#F1EDF7",
+    border: "1.5px solid rgba(241,237,247,.3)",
+    borderRadius: 12,
+    padding: "10px 18px",
+    fontFamily: "'Cairo', sans-serif",
+    fontWeight: 600,
+    fontSize: 14,
+    cursor: "pointer",
+    backdropFilter: "blur(4px)"
+  };
+  const input = {
+    background: "rgba(241,237,247,.08)",
+    border: "1px solid rgba(241,237,247,.3)",
+    borderRadius: 10,
+    padding: "11px 14px",
+    color: "#F1EDF7",
+    fontFamily: "'Cairo', sans-serif",
+    fontSize: 15,
+    outline: "none"
+  };
+  const GlobalStyle = () => /* @__PURE__ */ React.createElement("style", null, `
+      html, body { margin: 0; min-height: 100%; background: #0D0812; }
+      #root, #app { min-height: 100vh; }
+      * { box-sizing: border-box; }
+      @keyframes ca-fade-up { from { opacity:0; transform: translateY(14px); } to { opacity:1; transform: translateY(0); } }
+      @keyframes ca-dropdown { from { opacity:0; transform: translateY(-6px) scale(.95); } to { opacity:1; transform: translateY(0) scale(1); } }
+      @keyframes ca-deal { from { opacity:0; transform: translateY(26px) scale(.6) rotate(-6deg); } to { opacity:1; transform: translateY(0) scale(1) rotate(0); } }
+      @keyframes ca-land { 0% { transform: scale(.55) rotate(-12deg); opacity:.3; } 55% { transform: scale(1.1) rotate(4deg); opacity:1; } 100% { transform: scale(1) rotate(0); } }
+      @keyframes ca-pulse { 0%,100% { box-shadow: 0 0 0 2px rgba(47,168,90,.45), 0 0 0 0 rgba(47,168,90,.5); } 50% { box-shadow: 0 0 0 2px rgba(47,168,90,.7), 0 0 16px 5px rgba(47,168,90,.4); } }
+      @keyframes ca-shimmer { 0%,100% { filter: brightness(1); } 50% { filter: brightness(1.22); } }
+      @keyframes ca-uno-pop { 0% { transform: translate(-50%,-50%) scale(.2) rotate(-8deg); opacity:0; } 35% { transform: translate(-50%,-50%) scale(1.25) rotate(3deg); opacity:1; } 65% { transform: translate(-50%,-50%) scale(1) rotate(0); opacity:1; } 100% { transform: translate(-50%,-50%) scale(1.05); opacity:0; } }
+      @keyframes ca-trophy { 0% { transform: scale(0) rotate(-20deg); opacity:0; } 55% { transform: scale(1.25) rotate(8deg); opacity:1; } 80% { transform: scale(.92) rotate(-4deg); } 100% { transform: scale(1) rotate(0); } }
+      @keyframes ca-spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes ca-float-slow { 0%,100% { margin-top: 0px; } 50% { margin-top: -10px; } }
+      @keyframes ca-drift { 0% { transform: translateY(-40px) rotate(0deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 1; } 100% { transform: translateY(110vh) rotate(90deg); opacity: 0; } }
+      @keyframes ca-confetti { to { transform: translateY(110vh) rotate(540deg); } }
+      @keyframes ca-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes ca-wave { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(-22deg); } 50% { transform: rotate(0deg); } 75% { transform: rotate(-14deg); } }
+      @keyframes ca-blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+      @keyframes ca-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+      .ca-btn-primary { transition: transform .15s ease, filter .15s ease, box-shadow .15s ease; }
+      .ca-btn-primary:hover { filter: brightness(1.1); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(var(--ca-accent-rgb),.45), inset 0 1px 0 rgba(255,255,255,.3); }
+      .ca-btn-primary:active { transform: translateY(0); filter: brightness(.95); box-shadow: 0 2px 8px rgba(var(--ca-accent-rgb),.35); }
+      .ca-btn-primary:disabled { filter: grayscale(.4) brightness(.8); cursor: default; }
+      .ca-btn-ghost { transition: background .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+      .ca-btn-ghost:hover { background: rgba(241,237,247,.12); border-color: rgba(241,237,247,.6); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.25); }
+      .ca-btn-ghost:active { transform: translateY(0); }
+      .ca-panel { transition: box-shadow .2s ease, border-color .2s ease; }
+      .ca-card-playable { transition: transform .18s ease, filter .18s ease; cursor: pointer; }
+      .ca-card-playable:hover { transform: translateY(-8px) scale(1.05); filter: brightness(1.1); }
+      .ca-card-playable:active { transform: translateY(-3px) scale(.98); }
+      .ca-deck:hover { filter: brightness(1.15); transform: translateY(-2px); }
+      .ca-lang-option { transition: background .12s ease; }
+      .ca-lang-option:hover { background: rgba(var(--ca-accent-rgb),.18); }
+      .ca-swatch { transition: transform .12s ease, box-shadow .12s ease; }
+      .ca-swatch:hover { transform: scale(1.1); box-shadow: 0 0 0 3px rgba(241,237,247,.25); }
+      .ca-pfp-opt { transition: transform .15s ease, border-color .15s ease, background .15s ease; cursor: pointer; }
+      .ca-pfp-opt:hover { transform: translateY(-3px) scale(1.06); }
+      .ca-shop-item { transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease; cursor: pointer; }
+      .ca-shop-item:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,.3); }
+      .ca-tab { transition: background .15s ease, color .15s ease; cursor: pointer; }
+      @keyframes ca-coin-pop { 0% { opacity:0; transform: translateY(6px) scale(.7); } 30% { opacity:1; transform: translateY(-4px) scale(1.05); } 100% { opacity:0; transform: translateY(-26px) scale(1); } }
+    `);
+  const SoundToggle = () => /* @__PURE__ */ React.createElement(
+    "button",
+    {
+      className: "ca-btn-ghost",
+      onClick: () => setSoundOn((v) => !v),
+      style: {
+        ...btnGhost,
+        position: "fixed",
+        top: 16,
+        insetInlineStart: 16,
+        zIndex: 30,
+        padding: "8px 10px",
+        fontSize: 15,
+        background: "rgba(20,20,20,.35)",
+        backdropFilter: "blur(6px)"
+      },
+      title: soundOn ? "Mute" : "Unmute"
+    },
+    soundOn ? "\u{1F50A}" : "\u{1F508}"
+  );
+  const LangSwitcher = () => {
+    const cur = LANGS[lang];
+    return /* @__PURE__ */ React.createElement("div", { style: { position: "fixed", top: 16, insetInlineEnd: 16, zIndex: 30 }, onClick: (e) => e.stopPropagation() }, /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        className: "ca-btn-ghost",
+        onClick: () => {
+          setLangOpen((o) => !o);
+          sfx("open");
+        },
+        style: {
+          ...btnGhost,
+          display: "flex",
+          alignItems: "center",
+          gap: 8,
+          padding: "8px 12px",
+          background: "rgba(20,20,20,.35)",
+          backdropFilter: "blur(6px)"
+        }
+      },
+      /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, cur.flag),
+      /* @__PURE__ */ React.createElement("span", { style: { fontSize: 13 } }, cur.native),
+      /* @__PURE__ */ React.createElement("span", { style: {
+        fontSize: 10,
+        opacity: 0.8,
+        transition: "transform .2s ease",
+        transform: langOpen ? "rotate(180deg)" : "rotate(0deg)"
+      } }, "\u25BE")
+    ), langOpen && /* @__PURE__ */ React.createElement("div", { style: {
+      marginTop: 6,
+      background: "#1C0F2E",
+      border: "1px solid rgba(241,237,247,.18)",
+      borderRadius: 12,
+      overflow: "hidden",
+      minWidth: 160,
+      boxShadow: "0 10px 24px rgba(0,0,0,.45)",
+      animation: "ca-dropdown .16s ease"
+    } }, Object.entries(LANGS).map(([code, info]) => /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        key: code,
+        className: "ca-lang-option",
+        onClick: () => {
+          setLang(code);
+          setLangOpen(false);
+        },
+        style: {
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          padding: "10px 14px",
+          cursor: "pointer",
+          fontSize: 14,
+          background: code === lang ? "rgba(var(--ca-accent-rgb),.16)" : "transparent",
+          color: code === lang ? "var(--ca-accent)" : "#F1EDF7",
+          fontWeight: code === lang ? 700 : 500
+        }
+      },
+      /* @__PURE__ */ React.createElement("span", { style: { fontSize: 16 } }, info.flag),
+      /* @__PURE__ */ React.createElement("span", null, info.native)
+    ))));
+  };
+  if (stage === "landing") {
+    if (!profileLoaded) {
+      return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginTop: "20vh", opacity: 0.7 } }, t("connecting")));
+    }
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(AmbientSuits, null), /* @__PURE__ */ React.createElement(CornerFlourish, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 420, margin: "8vh auto 0", textAlign: "center", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement(Mascot, { mood: "wave", size: 100 }), /* @__PURE__ */ React.createElement("h1", { style: { fontSize: 32, fontWeight: 800, margin: "6px 0 6px" } }, t("appName")), /* @__PURE__ */ React.createElement("p", { style: { opacity: 0.75, fontSize: 15, marginBottom: 22 } }, t("tagline")), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, textAlign: "start", animation: "ca-fade-up .4s ease" } }, /* @__PURE__ */ React.createElement("label", { style: { fontSize: 13, opacity: 0.8, display: "block", marginBottom: 8 } }, t("yourName")), /* @__PURE__ */ React.createElement(
+      "input",
+      {
+        style: { ...input, width: "100%" },
+        value: name,
+        maxLength: 18,
+        placeholder: t("namePlaceholder"),
+        onChange: (e) => setName(e.target.value),
+        onKeyDown: (e) => e.key === "Enter" && name.trim() && (updateProfile({ name }), setStage("menu"))
+      }
+    ), /* @__PURE__ */ React.createElement("label", { style: { fontSize: 13, opacity: 0.8, display: "block", margin: "18px 0 8px" } }, t("chooseAvatar")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap" } }, profile.ownedPfps.map((id) => /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        key: id,
+        className: "ca-pfp-opt",
+        onClick: () => selectFreePfp(id),
+        style: {
+          width: 46,
+          height: 46,
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: 22,
+          background: profile.pfp === id ? "rgba(231,147,95,.22)" : "rgba(241,237,247,.06)",
+          border: profile.pfp === id ? "2px solid var(--ca-accent)" : "2px solid rgba(241,237,247,.2)"
+        }
+      },
+      pfpEmoji(id)
+    ))), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.55, marginTop: 8 } }, t("earnMore")), /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        className: "ca-btn-primary",
+        style: { ...btnPrimary, width: "100%", marginTop: 18, opacity: name.trim() ? 1 : 0.5 },
+        disabled: !name.trim(),
+        onClick: () => {
+          updateProfile({ name });
+          setStage("menu");
+        }
+      },
+      t("continue")
+    ))));
+  }
+  if (stage === "menu") {
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(AmbientSuits, null), /* @__PURE__ */ React.createElement(CornerFlourish, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 460, margin: "8vh auto 0", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        className: "ca-panel",
+        onClick: () => {
+          setPrevStageBeforeShop("menu");
+          setStage("shop");
+        },
+        style: {
+          ...cardPanel,
+          marginBottom: 16,
+          padding: "12px 16px",
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+          cursor: "pointer",
+          animation: "ca-fade-up .3s ease"
+        }
+      },
+      /* @__PURE__ */ React.createElement(Avatar, { pfp: profile.pfp, effect: profile.effect, size: 44 }),
+      /* @__PURE__ */ React.createElement("div", { style: { flex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 16, fontWeight: 700, color: nameColorHex(profile.nameColor) } }, name), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, display: "flex", alignItems: "center", gap: 6, opacity: 0.85 } }, /* @__PURE__ */ React.createElement("span", { style: { color: getTier(profile.gamesPlayed).color, fontWeight: 700 } }, t("tier_" + getTier(profile.gamesPlayed).id)), /* @__PURE__ */ React.createElement("span", { style: { opacity: 0.5 } }, "\xB7"), /* @__PURE__ */ React.createElement("span", null, /* @__PURE__ */ React.createElement(CoinIcon, { size: 13 }), " ", profile.coins))),
+      /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, padding: "7px 12px", fontSize: 12 } }, t("editProfile"))
+    ), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, marginBottom: 16, animation: "ca-fade-up .4s ease" } }, /* @__PURE__ */ React.createElement("h3", { style: { margin: "0 0 14px", fontSize: 16, fontWeight: 700 } }, t("createTable")), /* @__PURE__ */ React.createElement("label", { style: { fontSize: 13, opacity: 0.8, display: "block", marginBottom: 8 } }, t("chooseGame")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 14, flexWrap: "wrap" } }, [
+      ["uno", "\u{1F0A0}", t("uno")],
+      ["chess", "\u265F", t("chess")],
+      ["poker", "\u{1F0CF}", t("poker")],
+      ["pool", "\u{1F3B1}", t("pool")]
+    ].map(([id, icon, label]) => /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        key: id,
+        className: selectedGame === id ? "ca-btn-primary" : "ca-btn-ghost",
+        onClick: () => {
+          sfx("open");
+          setSelectedGame(id);
+        },
+        style: {
+          ...selectedGame === id ? btnPrimary : btnGhost,
+          display: "flex",
+          alignItems: "center",
+          gap: 6,
+          cursor: "pointer"
+        }
+      },
+      icon,
+      " ",
+      label
+    ))), selectedGame === "chess" || selectedGame === "pool" ? /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, opacity: 0.65, marginBottom: 18 } }, t(selectedGame === "chess" ? "chess2p" : "pool2p")) : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("label", { style: { fontSize: 13, opacity: 0.8, display: "block", marginBottom: 8 } }, t("playerCount")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 18 } }, [2, 3, 4, 5, 6].map((n) => /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        key: n,
+        onClick: () => setMaxPlayers(n),
+        style: {
+          ...btnGhost,
+          padding: "8px 14px",
+          background: maxPlayers === n ? "var(--ca-accent)" : "transparent",
+          color: maxPlayers === n ? "#170B26" : "#F1EDF7",
+          borderColor: maxPlayers === n ? "var(--ca-accent)" : "rgba(241,237,247,.35)"
+        }
+      },
+      n
+    )))), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: { ...btnPrimary, width: "100%" }, onClick: createTable }, t("createTable"))), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, animation: "ca-fade-up .5s ease" } }, /* @__PURE__ */ React.createElement("h3", { style: { margin: "0 0 14px", fontSize: 16, fontWeight: 700 } }, t("joinTable")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10 } }, /* @__PURE__ */ React.createElement(
+      "input",
+      {
+        style: { ...input, flex: 1, textTransform: "uppercase", letterSpacing: 2 },
+        placeholder: t("enterCode"),
+        value: joinCodeInput,
+        maxLength: 5,
+        onChange: (e) => {
+          setJoinCodeInput(e.target.value);
+          setError("");
+        },
+        onKeyDown: (e) => e.key === "Enter" && joinTable()
+      }
+    ), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: btnPrimary, onClick: joinTable }, t("join"))), error && /* @__PURE__ */ React.createElement("div", { style: { color: "#E8A0A0", fontSize: 13, marginTop: 10 } }, error))));
+  }
+  if (stage === "shop") {
+    const tier = getTier(profile.gamesPlayed);
+    const nxt = nextTier(profile.gamesPlayed);
+    const catalog = shopTab === "pfp" ? PFP_CATALOG : shopTab === "color" ? NAME_COLOR_CATALOG : shopTab === "effect" ? EFFECT_CATALOG : THEME_CATALOG;
+    const ownedKey = shopTab === "pfp" ? "ownedPfps" : shopTab === "color" ? "ownedColors" : shopTab === "effect" ? "ownedEffects" : "ownedThemes";
+    const equippedVal = shopTab === "pfp" ? profile.pfp : shopTab === "color" ? profile.nameColor : shopTab === "effect" ? profile.effect : profile.theme;
+    const handleBuy = shopTab === "pfp" ? buyOrEquipPfp : shopTab === "color" ? buyOrEquipColor : shopTab === "effect" ? buyOrEquipEffect : buyOrEquipTheme;
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(AmbientSuits, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 520, margin: "0 auto", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 } }, /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, padding: "7px 14px", fontSize: 13 }, onClick: () => {
+      sfx("click");
+      setStage(prevStageBeforeShop);
+    } }, "\u2190 ", t("back")), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 14, fontWeight: 700 } }, /* @__PURE__ */ React.createElement(CoinIcon, { size: 13 }), " ", profile.coins)), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, textAlign: "center", marginBottom: 16, animation: "ca-fade-up .35s ease" } }, /* @__PURE__ */ React.createElement(Avatar, { pfp: profile.pfp, effect: profile.effect, size: 72 }), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 18, fontWeight: 800, marginTop: 10, color: nameColorHex(profile.nameColor) } }, name), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 700, color: tier.color, marginTop: 2 } }, t("tier_" + tier.id), " \xB7 ", profile.gamesPlayed, " ", t("gamesPlayed")), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.6, marginTop: 4 } }, nxt ? `${nxt.min - profile.gamesPlayed} ${t("nextTierIn")}` : t("maxTier"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, marginBottom: 14 } }, [["pfp", "tabPfps"], ["color", "tabColors"], ["effect", "tabEffects"], ["theme", "tabThemes"]].map(([id, key]) => /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        key: id,
+        className: "ca-tab",
+        onClick: () => {
+          sfx("open");
+          setShopTab(id);
+        },
+        style: {
+          flex: 1,
+          textAlign: "center",
+          padding: "10px 6px",
+          borderRadius: 10,
+          fontSize: 12.5,
+          fontWeight: 700,
+          background: shopTab === id ? "linear-gradient(135deg, var(--ca-accent), var(--ca-accent-dark))" : "rgba(241,237,247,.06)",
+          color: shopTab === id ? "#1A0E2B" : "#F1EDF7",
+          border: shopTab === id ? "none" : "1px solid rgba(241,237,247,.2)"
+        }
+      },
+      t(key)
+    ))), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, animation: "ca-fade-up .4s ease" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(90px, 1fr))", gap: 10 } }, catalog.map((item) => {
+      const owned = profile[ownedKey].includes(item.id);
+      const equipped = equippedVal === item.id;
+      return /* @__PURE__ */ React.createElement(
+        "div",
+        {
+          key: item.id,
+          className: "ca-shop-item",
+          onClick: () => handleBuy(item.id, item.cost),
+          style: {
+            borderRadius: 12,
+            padding: "12px 8px",
+            textAlign: "center",
+            background: equipped ? "rgba(231,147,95,.16)" : "rgba(241,237,247,.05)",
+            border: equipped ? "2px solid var(--ca-accent)" : "1.5px solid rgba(241,237,247,.16)"
+          }
+        },
+        shopTab === "pfp" && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 26, marginBottom: 6 } }, item.emoji),
+        shopTab === "color" && /* @__PURE__ */ React.createElement("div", { style: { width: 26, height: 26, borderRadius: "50%", background: item.hex, margin: "0 auto 6px", border: "2px solid rgba(241,237,247,.4)" } }),
+        shopTab === "effect" && /* @__PURE__ */ React.createElement("div", { style: { margin: "0 auto 6px" } }, /* @__PURE__ */ React.createElement(Avatar, { pfp: profile.pfp, effect: item.id, size: 30 })),
+        shopTab === "theme" && /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement("div", { style: {
+          width: 40,
+          height: 26,
+          borderRadius: 6,
+          margin: "0 auto 6px",
+          overflow: "hidden",
+          border: "1.5px solid rgba(241,237,247,.4)",
+          background: `linear-gradient(135deg, ${item.bgTop}, ${item.bgBottom})`,
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center"
+        } }, /* @__PURE__ */ React.createElement("div", { style: { width: 16, height: 8, borderRadius: "3px 3px 0 0", background: `linear-gradient(135deg, ${item.accent}, ${item.accentDark})` } })), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 9.5, opacity: 0.85, marginBottom: 2 } }, t("theme_" + item.id))),
+        /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, fontWeight: 700 } }, equipped ? t("equipped") : owned ? t("equip") : item.cost === 0 ? t("equip") : /* @__PURE__ */ React.createElement(React.Fragment, null, /* @__PURE__ */ React.createElement(CoinIcon, { size: 11 }), " ", item.cost))
+      );
+    })), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.55, marginTop: 14, textAlign: "center" } }, t("earnMore")))));
+  }
+  if (stage === "lobby" && room) {
+    const isHost = room.hostId === playerId;
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(AmbientSuits, null), /* @__PURE__ */ React.createElement(CornerFlourish, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 460, margin: "8vh auto 0", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, animation: "ca-fade-up .4s ease" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 18 } }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, opacity: 0.7 } }, t("tableCode")), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 28, fontWeight: 800, letterSpacing: 4, fontVariantNumeric: "tabular-nums" } }, room.code), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, opacity: 0.7, marginTop: 2 } }, t(room.gameType))), /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        className: "ca-btn-ghost",
+        style: btnGhost,
+        onClick: async () => {
+          sfx("click");
+          const ok = await copyToClipboard(room.code);
+          setCopiedFlash(ok ? "ok" : "fail");
+          setTimeout(() => setCopiedFlash(null), 1400);
+        }
+      },
+      copiedFlash === "ok" ? t("copied") : copiedFlash === "fail" ? room.code : t("copyCode")
+    )), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, opacity: 0.8, marginBottom: 8 } }, t("players"), " (", room.players.length, "/", room.maxPlayers, ")"), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", flexDirection: "column", gap: 8, marginBottom: 20 } }, room.players.map((p, i) => /* @__PURE__ */ React.createElement(
+      "div",
+      {
+        key: p.id,
+        style: {
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          animation: `ca-fade-up .35s ease both`,
+          animationDelay: `${i * 60}ms`
+        }
+      },
+      /* @__PURE__ */ React.createElement(Avatar, { pfp: p.pfp || "joker", effect: p.effect || "none", size: 34 }),
+      /* @__PURE__ */ React.createElement("div", { style: { fontSize: 14, fontWeight: 700, color: nameColorHex(p.nameColor || "ivory") } }, p.name),
+      p.id === room.hostId && /* @__PURE__ */ React.createElement("span", { style: { fontSize: 11, opacity: 0.65 } }, "\xB7 ", t("host"))
+    ))), isHost ? /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        className: "ca-btn-primary",
+        style: { ...btnPrimary, width: "100%", opacity: room.players.length >= 2 ? 1 : 0.5 },
+        disabled: room.players.length < 2,
+        onClick: startGame
+      },
+      t("startGame")
+    ) : /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", opacity: 0.75, fontSize: 14 } }, t("waiting")), room.players.length < 2 && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, opacity: 0.6, marginTop: 8, textAlign: "center" } }, t("needMore")), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, width: "100%", marginTop: 14 }, onClick: leaveTable }, t("leaveTable")))));
+  }
+  if (stage === "game" && room && game) {
+    if (room.gameType === "chess") {
+      return /* @__PURE__ */ React.createElement(
+        ChessGame,
+        {
+          room,
+          game,
+          playerId,
+          name,
+          profile,
+          t,
+          sfx,
+          commitGame,
+          leaveTable,
+          playAgain,
+          Avatar,
+          nameColorHex,
+          coinPop,
+          pageStyle,
+          GlobalStyle,
+          LangSwitcher,
+          SoundToggle,
+          cardPanel,
+          btnPrimary,
+          btnGhost
+        }
+      );
+    }
+    if (room.gameType === "poker") {
+      return /* @__PURE__ */ React.createElement(
+        PokerGame,
+        {
+          room,
+          game,
+          playerId,
+          order,
+          name,
+          profile,
+          t,
+          sfx,
+          commitGame,
+          leaveTable,
+          Avatar,
+          nameColorHex,
+          pageStyle,
+          GlobalStyle,
+          LangSwitcher,
+          SoundToggle,
+          cardPanel,
+          btnPrimary,
+          btnGhost,
+          input
+        }
+      );
+    }
+    if (room.gameType === "pool") {
+      return /* @__PURE__ */ React.createElement(
+        PoolGame,
+        {
+          room,
+          game,
+          playerId,
+          order,
+          name,
+          profile,
+          t,
+          sfx,
+          commitGame,
+          leaveTable,
+          playAgain,
+          Avatar,
+          nameColorHex,
+          coinPop,
+          pageStyle,
+          GlobalStyle,
+          LangSwitcher,
+          SoundToggle,
+          cardPanel,
+          btnPrimary,
+          btnGhost
+        }
+      );
+    }
+    const top = game.discard[game.discard.length - 1];
+    const myHand = game.hands[playerId] || [];
+    const otherPlayers = room.players.filter((p) => p.id !== playerId);
+    const currentPlayer = room.players.find((p) => p.id === order[game.currentIndex]);
+    const playable = (c) => canPlay(c, top, game.currentColor);
+    if (game.winnerId) {
+      const winner = room.players.find((p) => p.id === game.winnerId);
+      const isMe = game.winnerId === playerId;
+      return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(Confetti, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 420, margin: "14vh auto 0", textAlign: "center", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement(Mascot, { mood: "cheer", size: 100 }), /* @__PURE__ */ React.createElement("h2", { style: { fontSize: 26, fontWeight: 800, margin: "6px 0 6px", animation: "ca-fade-up .4s ease .2s both" } }, isMe ? name : winner?.name, " ", t("wins")), coinPop !== null && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 15, fontWeight: 800, color: "#F0C24B", animation: "ca-coin-pop 1.4s ease forwards" } }, /* @__PURE__ */ React.createElement(CoinIcon, { size: 16 }), " +", coinPop), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10, justifyContent: "center", marginTop: 24, animation: "ca-fade-up .4s ease .32s both" } }, room.hostId === playerId && /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: btnPrimary, onClick: playAgain }, t("playAgain")), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: btnGhost, onClick: leaveTable }, t("backToLobby")))));
+    }
+    return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement(GlobalStyle, null), /* @__PURE__ */ React.createElement(LangSwitcher, null), /* @__PURE__ */ React.createElement(SoundToggle, null), /* @__PURE__ */ React.createElement(AmbientSuits, null), /* @__PURE__ */ React.createElement("div", { style: { maxWidth: 720, margin: "0 auto", position: "relative", zIndex: 1 } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, opacity: 0.75 } }, t("tableCode"), ": ", /* @__PURE__ */ React.createElement("b", { style: { letterSpacing: 2 } }, room.code)), /* @__PURE__ */ React.createElement("button", { className: "ca-btn-ghost", style: { ...btnGhost, padding: "6px 12px", fontSize: 12 }, onClick: leaveTable }, t("leaveTable"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10, flexWrap: "wrap", justifyContent: "center", marginBottom: 22 } }, otherPlayers.map((p, i) => {
+      const isTurn = order[game.currentIndex] === p.id;
+      const count = (game.hands[p.id] || []).length;
+      return /* @__PURE__ */ React.createElement("div", { key: p.id, className: "ca-panel", style: {
+        ...cardPanel,
+        padding: "10px 14px",
+        textAlign: "center",
+        minWidth: 84,
+        border: isTurn ? "1px solid #2FA85A" : cardPanel.border,
+        animation: isTurn ? "ca-pulse 1.8s ease-in-out infinite" : `ca-fade-up .35s ease ${i * 50}ms both`
+      } }, /* @__PURE__ */ React.createElement("div", { style: { margin: "0 auto 6px", width: 30 } }, /* @__PURE__ */ React.createElement(Avatar, { pfp: p.pfp || "joker", effect: p.effect || "none", size: 30 })), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 12, fontWeight: 700, color: nameColorHex(p.nameColor || "ivory") } }, p.name), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.7 } }, count, " ", t("cardsLeft")), count === 1 && game.unoCalled[p.id] && /* @__PURE__ */ React.createElement("div", { style: { fontSize: 10, color: "#C1554A", fontWeight: 800, marginTop: 2 } }, t("callUno")));
+    })), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center", gap: 28, marginBottom: 24 } }, /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center" }, onClick: drawCard }, /* @__PURE__ */ React.createElement(
+      CardFace,
+      {
+        faceDown: true,
+        card: null,
+        className: myTurn ? "ca-deck" : "",
+        style: {
+          cursor: myTurn ? "pointer" : "default",
+          opacity: myTurn ? 1 : 0.6,
+          animation: myTurn ? "ca-shimmer 2.2s ease-in-out infinite" : "none"
+        }
+      }
+    ), /* @__PURE__ */ React.createElement("div", { style: { fontSize: 11, opacity: 0.7, marginTop: 4 } }, t("deck"), " \xB7 ", game.deck.length)), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center" } }, /* @__PURE__ */ React.createElement(CardFace, { key: topAnimKey, card: top, style: { animation: "ca-land .38s cubic-bezier(.3,1.4,.4,1)" } }), /* @__PURE__ */ React.createElement("div", { style: {
+      fontSize: 11,
+      marginTop: 4,
+      fontWeight: 700,
+      color: COLOR_HEX[game.currentColor] || "#fff",
+      background: "rgba(241,237,247,.9)",
+      borderRadius: 6,
+      padding: "2px 8px",
+      display: "inline-block",
+      transition: "color .2s ease"
+    } }, t(game.currentColor)))), /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginBottom: 18, minHeight: 22 } }, myTurn ? /* @__PURE__ */ React.createElement("div", { style: { fontSize: 16, fontWeight: 800, color: "#2FA85A", animation: "ca-fade-up .3s ease" } }, t("yourTurn")) : /* @__PURE__ */ React.createElement("div", { style: { fontSize: 14, opacity: 0.75, animation: "ca-fade-up .3s ease" } }, currentPlayer?.name, " \u2014 ", t("turnOf")), /* @__PURE__ */ React.createElement(TurnTimer, { active: myTurn && !pendingWildCard, seconds: 30, onExpire: drawCard })), /* @__PURE__ */ React.createElement("div", { className: "ca-panel", style: { ...cardPanel, padding: "16px 12px" } }, /* @__PURE__ */ React.createElement("div", { style: { display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 13, fontWeight: 700, display: "flex", alignItems: "center", gap: 8 } }, /* @__PURE__ */ React.createElement(Avatar, { pfp: profile.pfp, effect: profile.effect, size: 26 }), /* @__PURE__ */ React.createElement("span", { style: { color: nameColorHex(profile.nameColor) } }, name)), myHand.length === 2 && /* @__PURE__ */ React.createElement("button", { className: "ca-btn-primary", style: { ...btnPrimary, padding: "6px 14px", fontSize: 12 }, onClick: callUno }, t("callUno"))), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 8, flexWrap: "wrap", justifyContent: "center" } }, myHand.map((c, i) => {
+      const canGo = myTurn && playable(c);
+      return /* @__PURE__ */ React.createElement(
+        "div",
+        {
+          key: c.id,
+          className: canGo ? "ca-card-playable" : "",
+          onClick: () => myTurn && playCard(c),
+          style: {
+            cursor: myTurn ? "pointer" : "default",
+            opacity: myTurn && !canGo ? 0.5 : 1,
+            animation: shakeCardId === c.id ? "ca-shake .35s ease" : dealt ? `ca-deal .32s cubic-bezier(.25,1,.4,1) ${i * 45}ms both` : "none"
+          }
+        },
+        /* @__PURE__ */ React.createElement(CardFace, { card: c })
+      );
+    }))), unoFlash && /* @__PURE__ */ React.createElement("div", { style: {
+      position: "fixed",
+      top: "50%",
+      left: "50%",
+      fontSize: 52,
+      fontWeight: 900,
+      color: "#C1554A",
+      textShadow: "0 4px 14px rgba(0,0,0,.55)",
+      pointerEvents: "none",
+      animation: "ca-uno-pop .9s ease forwards"
+    } }, t("callUno")), pendingWildCard && /* @__PURE__ */ React.createElement("div", { style: {
+      position: "fixed",
+      inset: 0,
+      background: "rgba(0,0,0,.55)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      zIndex: 30,
+      animation: "ca-fade-up .2s ease"
+    } }, /* @__PURE__ */ React.createElement("div", { style: {
+      ...cardPanel,
+      background: "#1C0F2E",
+      textAlign: "center",
+      animation: "ca-land .3s cubic-bezier(.3,1.4,.4,1)"
+    } }, /* @__PURE__ */ React.createElement("div", { style: { fontSize: 15, fontWeight: 700, marginBottom: 14 } }, t("chooseColor")), /* @__PURE__ */ React.createElement("div", { style: { display: "flex", gap: 10 } }, COLORS.map((c, i) => /* @__PURE__ */ React.createElement(
+      "button",
+      {
+        key: c,
+        className: "ca-swatch",
+        onClick: () => resolvePlay(pendingWildCard, c),
+        style: {
+          width: 52,
+          height: 52,
+          borderRadius: 10,
+          border: "2px solid rgba(241,237,247,.5)",
+          background: COLOR_HEX[c],
+          cursor: "pointer",
+          animation: `ca-fade-up .25s ease ${i * 50}ms both`
+        }
+      }
+    )))))));
+  }
+  return /* @__PURE__ */ React.createElement("div", { style: pageStyle }, /* @__PURE__ */ React.createElement("div", { style: { textAlign: "center", marginTop: "20vh", opacity: 0.7 } }, t("connecting")));
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  React.createElement(React.StrictMode, null, React.createElement(CardArena))
+);
+
+</script>
+</body>
+</html>
